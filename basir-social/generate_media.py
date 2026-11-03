@@ -51,7 +51,8 @@ def design_feed(day: date, path: Path):
         _center(d,part,msg_y,message_font,white)
         msg_y+=75
     _center(d,"آموزش و پیشنهاد خدمت؛ نه گزارش رویداد واقعی",1140,_font(25),highlight)
-    _center(d,"بصیر یزد | @basiryazd",1235,_font(37,True),white)
+    _center(d,"بصیر یزد",1200,_font(33,True),white)
+    d.text((540,1260),"@basiryazd",font=_font(35,True),anchor="mm",fill=white,direction="ltr")
     path.parent.mkdir(exist_ok=True,parents=True)
     im.save(path,"JPEG",quality=87,subsampling=0)
     return {"path":path,"category":category,"title":title,"detail":detail,

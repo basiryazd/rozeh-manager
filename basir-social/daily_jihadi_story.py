@@ -157,8 +157,9 @@ def design(day,path):
     for line in msg_lines:
         _center(d,line,start,msg_font,white)
         start+=86
-    _center(d,"خدمت به مردم، با احترام و صداقت",1690,_font(30,True),highlight)
-    _center(d,MEDIA,1780,_font(32,True),white)
+    _center(d,"خدمت به مردم، با احترام و صداقت",1650,_font(30,True),highlight)
+    _center(d,"بصیر یزد",1735,_font(32,True),white)
+    d.text((540,1795),"@basiryazd",font=_font(34,True),anchor="mm",fill=white,direction="ltr")
     _center(d,"طرح آموزشی؛ نه گزارش یک رویداد واقعی",1840,_font(22),highlight)
     output=Path(path)
     output.parent.mkdir(parents=True,exist_ok=True)
