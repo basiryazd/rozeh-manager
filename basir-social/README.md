@@ -5,11 +5,11 @@ pipeline. It can run on GitHub Actions without third-party subscriptions.
 
 ## What runs unattended
 
-- Creates 14 daily **1080×1920** vertical JPG story graphics.
+- Creates 14 daily **1080×1920** vertical JPG Stories and 14 daily **1080×1350** JPG feed designs, with captions.
 - Uses pre-reviewed, evergreen Persian advice about charity, volunteering,
   kindness, privacy, and Friday Mahdavi good deeds.
 - Prints **قرارگاه جهادی حضرت بقیةالله (عج)** and **@basiryazd** on each image.
-- Generates a manifest and a reusable public URL for each story:
+- Generates a manifest and reusable public URLs for each type:
   `https://raw.githubusercontent.com/basiryazd/rozeh-manager/main/basir-social/public_media/story-YYYY-MM-DD.jpg`
 - GitHub Actions runs every day (at about 20:15 Iran time), creates images
   and pushes the files to the repository's public branch. A push to main
