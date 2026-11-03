@@ -43,7 +43,9 @@ jobs:
           from pathlib import Path
           data=json.loads(Path("basir-social/public_media/manifest.json").read_text("utf-8"))
           assert len(data["items"])==28
-          assert all(Path("basir-social/public_media",x["file"]).is_file() for x in data["items"])\n          assert sum(x["kind"]=="STORY" for x in data["items"])==14\n          assert sum(x["kind"]=="POST" for x in data["items"])==14
+          assert all(Path("basir-social/public_media",x["file"]).is_file() for x in data["items"])
+          assert sum(x["kind"]=="STORY" for x in data["items"])==14
+          assert sum(x["kind"]=="POST" for x in data["items"])==14
           assert all(x["handle"]=="@basiryazd" for x in data["items"])
           print("Validated:",len(data["items"]),"public branded story images")
           PY
