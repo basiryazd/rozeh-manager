@@ -4,10 +4,16 @@
   "generated_for_start": "2026-11-03",
   "generated_by": "automated design runner",
   "image_format": "JPEG",
-  "image_size": [
-    1080,
-    1920
-  ],
+  "image_sizes": {
+    "STORY": [
+      1080,
+      1920
+    ],
+    "POST": [
+      1080,
+      1350
+    ]
+  },
   "publisher_mode": "MEDIA_ONLY_NOT_PUBLISHED",
   "items": [
     {
@@ -26,6 +32,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-03.jpg",
+      "path": "basir-social/public_media/feed-2026-11-03.jpg",
+      "sha256": "0f9adf21c05a7d350227e398533caec39c6a0042d932292d0ba49f83648c4dad",
+      "topic_id": 2,
+      "category": "فرهنگ انفاق",
+      "title": "کمک با حفظ کرامت",
+      "caption": "🌿 کمک با حفظ کرامت\n\nکمک‌رسانی نباید به انتشار چهره یا اطلاعات شخصی دریافت‌کنندگان وابسته باشد.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -49,6 +75,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-04",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-04.jpg",
+      "path": "basir-social/public_media/feed-2026-11-04.jpg",
+      "sha256": "ea09636f8489f4cd0c3868609d0f31b20513a501bab18a947ed29c8202f5845b",
+      "topic_id": 3,
+      "category": "آموزش داوطلبی",
+      "title": "از توانایی خود شروع کنیم",
+      "caption": "🌿 از توانایی خود شروع کنیم\n\nآموزش، تعمیر، مشاوره و همراهی؛ هر مهارت می‌تواند راهی برای خدمت باشد.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-05",
       "kind": "STORY",
       "network_types": {
@@ -64,6 +110,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-05",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-05.jpg",
+      "path": "basir-social/public_media/feed-2026-11-05.jpg",
+      "sha256": "d02401c6ff18ef5c2816ea79769a3dd4d7ec3985c72849e97d6a8aa520728b85",
+      "topic_id": 4,
+      "category": "انتظار و مسئولیت",
+      "title": "منتظرِ اهل عمل باشیم",
+      "caption": "🌿 منتظرِ اهل عمل باشیم\n\nیکی از نیازهای کوچک اطرافمان را پیدا کنیم و برای رفع آن قدمی برداریم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -87,6 +153,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-06",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-06.jpg",
+      "path": "basir-social/public_media/feed-2026-11-06.jpg",
+      "sha256": "c4c23abcf60b12bfb6a926981e6ed81d8c302643a31d47bcdb1bb038240f4d1e",
+      "topic_id": 5,
+      "category": "انتظار و خدمت",
+      "title": "یک کار خیر به نیت امام زمان (عج)",
+      "caption": "🌿 یک کار خیر به نیت امام زمان (عج)\n\nاین جمعه به نیت حضرت ولی‌عصر (عج)، با حفظ احترام به فردی سالمند یا تنها کمک کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-07",
       "kind": "STORY",
       "network_types": {
@@ -102,6 +188,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-07",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-07.jpg",
+      "path": "basir-social/public_media/feed-2026-11-07.jpg",
+      "sha256": "5e1525fbe686e1e5cdd70ec162d27797ec94bf65a204e1b4b9b657b31211a1d3",
+      "topic_id": 6,
+      "category": "شفافیت جهادی",
+      "title": "گزارش درست، اعتماد می‌سازد",
+      "caption": "🌿 گزارش درست، اعتماد می‌سازد\n\nدر گزارش فعالیت‌ها فقط اقدام‌های انجام‌شده و نتایج قابل تأیید را بیان کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -125,6 +231,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-08",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-08.jpg",
+      "path": "basir-social/public_media/feed-2026-11-08.jpg",
+      "sha256": "69d66d77a2fd50fbbe3d684195d34a32735785435c0d479fa79a2840646a77b5",
+      "topic_id": 7,
+      "category": "کمک مؤمنانه",
+      "title": "پیش از تهیه بسته، نیازسنجی",
+      "caption": "🌿 پیش از تهیه بسته، نیازسنجی\n\nمحتوای بسته حمایتی را متناسب با نیاز خانواده و شرایط محلی انتخاب کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-09",
       "kind": "STORY",
       "network_types": {
@@ -140,6 +266,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-09",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-09.jpg",
+      "path": "basir-social/public_media/feed-2026-11-09.jpg",
+      "sha256": "be0f3f626ab6ddd03374770c4dfc4abaf84c57d1bd82c99e4e4beba15b34d050",
+      "topic_id": 8,
+      "category": "خدمت جهادی",
+      "title": "خدمت، ادامه می‌خواهد",
+      "caption": "🌿 خدمت، ادامه می‌خواهد\n\nپس از پایان برنامه، از مخاطبان بپرسیم آیا نیازهای اصلی برطرف شده است.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -163,6 +309,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-10",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-10.jpg",
+      "path": "basir-social/public_media/feed-2026-11-10.jpg",
+      "sha256": "2eeaf7e3f4d46c07048988a07b24da9a0df71d9b36346363243b4bbff213f2dd",
+      "topic_id": 9,
+      "category": "فرهنگ انفاق",
+      "title": "احترام مهم‌تر از تصویر است",
+      "caption": "🌿 احترام مهم‌تر از تصویر است\n\nدر روایت کار خیر، از نمایش وضعیت دشوار زندگی افراد بدون رضایت پرهیز کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-11",
       "kind": "STORY",
       "network_types": {
@@ -178,6 +344,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-11.jpg",
+      "path": "basir-social/public_media/feed-2026-11-11.jpg",
+      "sha256": "02f64836979beded2d2137cae0aa290c9b0099eb720e3b55f3dfd8e7a1766146",
+      "topic_id": 10,
+      "category": "آموزش داوطلبی",
+      "title": "برای خدمت مهارت بیاموزیم",
+      "caption": "🌿 برای خدمت مهارت بیاموزیم\n\nیک مهارت کاربردی را انتخاب کنیم و برای آموزش آن به دیگران وقت بگذاریم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -201,6 +387,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-12",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-12.jpg",
+      "path": "basir-social/public_media/feed-2026-11-12.jpg",
+      "sha256": "c626bc7cf66b091ca9b9a262a92dc279b7b0dde68810385558029fffae917df4",
+      "topic_id": 11,
+      "category": "مهدویت",
+      "title": "انتظار و مهربانی",
+      "caption": "🌿 انتظار و مهربانی\n\nامروز با یک رفتار مسئولانه و مهربانانه، محیط اطرافمان را بهتر کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-13",
       "kind": "STORY",
       "network_types": {
@@ -216,6 +422,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-13.jpg",
+      "path": "basir-social/public_media/feed-2026-11-13.jpg",
+      "sha256": "c495e1b20dd4cd20bef80857825186df677348c7b1c4461a86f6db1499949706",
+      "topic_id": 6,
+      "category": "جمعه‌های امید",
+      "title": "جمعه؛ روز مهربانی و انتظار",
+      "caption": "🌿 جمعه؛ روز مهربانی و انتظار\n\nبه نیت امام زمان (عج)، هزینه یک وعده غذا را به فردی نیازمند هدیه کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     },
@@ -239,6 +465,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-14",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-14.jpg",
+      "path": "basir-social/public_media/feed-2026-11-14.jpg",
+      "sha256": "861071a87cc56ad7ed16e6a2fd5c656fd70c1dd46b9bef4905d2223973628673",
+      "topic_id": 13,
+      "category": "کار جهادی",
+      "title": "ایمنی، مقدمه خدمت",
+      "caption": "🌿 ایمنی، مقدمه خدمت\n\nقبل از فعالیت میدانی، ابزار مناسب و ایمنی داوطلبان را بررسی کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-15",
       "kind": "STORY",
       "network_types": {
@@ -258,6 +504,26 @@
       "review_required_for_any_real_world_event": true
     },
     {
+      "date": "2026-11-15",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-15.jpg",
+      "path": "basir-social/public_media/feed-2026-11-15.jpg",
+      "sha256": "b0ef882bc8e5c397437137286317c7541711273531b2924be948dfc515d3901c",
+      "topic_id": 14,
+      "category": "کمک مؤمنانه",
+      "title": "کمکِ به‌موقع و دقیق",
+      "caption": "🌿 کمکِ به‌موقع و دقیق\n\nنیازهای فوری را از نیازهای بلندمدت جدا کنیم تا منابع بهتر به کار گرفته شوند.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
       "date": "2026-11-16",
       "kind": "STORY",
       "network_types": {
@@ -273,6 +539,26 @@
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-16",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-16.jpg",
+      "path": "basir-social/public_media/feed-2026-11-16.jpg",
+      "sha256": "d5e3f33b020eb2dbc7ab72519564f42856556bf3a153cbe825df9cb8502940c4",
+      "topic_id": 15,
+      "category": "گزارش مسئولانه",
+      "title": "برای هر عکس اجازه بگیریم",
+      "caption": "🌿 برای هر عکس اجازه بگیریم\n\nرضایت آگاهانه برای عکاسی و انتشار تصاویر افراد را جدی بگیریم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
       "ai_generated": false,
       "review_required_for_any_real_world_event": true
     }
