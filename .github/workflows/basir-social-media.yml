@@ -35,15 +35,17 @@ jobs:
           python-version: "3.12"
       - name: Install graphic tools
         run: python -m pip install "Pillow==11.3.0"
-      - name: Generate and validate 14 daily visuals
+      - name: Generate and validate 14 daily Stories and 14 feed visuals
         run: |
           python basir-social/generate_media.py --days 14
           python - <<'PY'
           import json
           from pathlib import Path
           data=json.loads(Path("basir-social/public_media/manifest.json").read_text("utf-8"))
-          assert len(data["items"])==14
+          assert len(data["items"])==28
           assert all(Path("basir-social/public_media",x["file"]).is_file() for x in data["items"])
+          assert sum(x["kind"]=="STORY" for x in data["items"])==14
+          assert sum(x["kind"]=="POST" for x in data["items"])==14
           assert all(x["handle"]=="@basiryazd" for x in data["items"])
           print("Validated:",len(data["items"]),"public branded story images")
           PY
@@ -54,7 +56,7 @@ jobs:
           git config user.email "basiryazd-design-bot@users.noreply.github.com"
           git add basir-social/public_media/
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh Basir Yazd 14-day branded media assets [skip ci]"
+            git commit -m "Refresh Basir Yazd 14-day branded feed/story assets [skip ci]"
             git push origin HEAD:main
           else
             echo "No daily media changes"
