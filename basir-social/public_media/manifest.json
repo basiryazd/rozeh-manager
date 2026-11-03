@@ -1,0 +1,280 @@
+{
+  "source": "basir-social/daily_jihadi_story.py",
+  "timezone": "Asia/Tehran",
+  "generated_for_start": "2026-11-03",
+  "generated_by": "automated design runner",
+  "image_format": "JPEG",
+  "image_size": [
+    1080,
+    1920
+  ],
+  "publisher_mode": "MEDIA_ONLY_NOT_PUBLISHED",
+  "items": [
+    {
+      "date": "2026-11-03",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-03.jpg",
+      "path": "basir-social/public_media/story-2026-11-03.jpg",
+      "sha256": "9f5b38abf07ceb4b11fc413f65b724f51ba7658b18ebf8e73df37813216995f6",
+      "topic_id": 2,
+      "category": "فرهنگ انفاق",
+      "title": "کمک با حفظ کرامت",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-04.jpg",
+      "path": "basir-social/public_media/story-2026-11-04.jpg",
+      "sha256": "d0d5992782cb0e2cc85d84bd7b0cbaaf1f0203b91c292a50e014b012c93c3a41",
+      "topic_id": 3,
+      "category": "آموزش داوطلبی",
+      "title": "از توانایی خود شروع کنیم",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-05",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-05.jpg",
+      "path": "basir-social/public_media/story-2026-11-05.jpg",
+      "sha256": "e1d61c5c80dde689464e49c6621132eed0e74348dbef19af42c209b55e96293d",
+      "topic_id": 4,
+      "category": "انتظار و مسئولیت",
+      "title": "منتظرِ اهل عمل باشیم",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-06",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-06.jpg",
+      "path": "basir-social/public_media/story-2026-11-06.jpg",
+      "sha256": "7efb03e5d8b1441584f36344c5efb6a0704de9603bb82f1537d5417521453c35",
+      "topic_id": 5,
+      "category": "انتظار و خدمت",
+      "title": "یک کار خیر به نیت امام زمان (عج)",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-07",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-07.jpg",
+      "path": "basir-social/public_media/story-2026-11-07.jpg",
+      "sha256": "cc0001163e8bde08820c9c646e255e758dc714bcb0071e88c4ffe45f0b911414",
+      "topic_id": 6,
+      "category": "شفافیت جهادی",
+      "title": "گزارش درست، اعتماد می‌سازد",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-08",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-08.jpg",
+      "path": "basir-social/public_media/story-2026-11-08.jpg",
+      "sha256": "f190642ed3547cdb4d10617773756dbfaf019278ddf7ddb40ea8c9e31ca8a43c",
+      "topic_id": 7,
+      "category": "کمک مؤمنانه",
+      "title": "پیش از تهیه بسته، نیازسنجی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-09",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-09.jpg",
+      "path": "basir-social/public_media/story-2026-11-09.jpg",
+      "sha256": "2d540122d9b1f7dcf32415ab40217ce6642bb7545371147913313b47b29f59a7",
+      "topic_id": 8,
+      "category": "خدمت جهادی",
+      "title": "خدمت، ادامه می‌خواهد",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-10",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-10.jpg",
+      "path": "basir-social/public_media/story-2026-11-10.jpg",
+      "sha256": "43c2e784c6fbf16849d807407c08aee4ef051956ccda85b134f460caa05c597e",
+      "topic_id": 9,
+      "category": "فرهنگ انفاق",
+      "title": "احترام مهم‌تر از تصویر است",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-11",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-11.jpg",
+      "path": "basir-social/public_media/story-2026-11-11.jpg",
+      "sha256": "3ea58cf4eff304cb1f7b90d0e5a61b32df2953a5a95eb24758bc7f5fbbd55edd",
+      "topic_id": 10,
+      "category": "آموزش داوطلبی",
+      "title": "برای خدمت مهارت بیاموزیم",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-12",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-12.jpg",
+      "path": "basir-social/public_media/story-2026-11-12.jpg",
+      "sha256": "7b0ee91ca1b5e8d7b48a084ecca67e4b73161cb9eb6dfd358715fae6535e0abf",
+      "topic_id": 11,
+      "category": "مهدویت",
+      "title": "انتظار و مهربانی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-13",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-13.jpg",
+      "path": "basir-social/public_media/story-2026-11-13.jpg",
+      "sha256": "8e237c59d22e7f6989821ce94d664d41886d29212f0f077e2d78473694e9ac5e",
+      "topic_id": 6,
+      "category": "جمعه‌های امید",
+      "title": "جمعه؛ روز مهربانی و انتظار",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-14",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-14.jpg",
+      "path": "basir-social/public_media/story-2026-11-14.jpg",
+      "sha256": "20247de0daf5d34bbea64ffe1c03169ba0b8fa370be80b8b3aedac074eae6c57",
+      "topic_id": 13,
+      "category": "کار جهادی",
+      "title": "ایمنی، مقدمه خدمت",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-15",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-15.jpg",
+      "path": "basir-social/public_media/story-2026-11-15.jpg",
+      "sha256": "345587ba6450c430f06d784d5f82181b2c640e69bfdb721dc9a53166fdc716ae",
+      "topic_id": 14,
+      "category": "کمک مؤمنانه",
+      "title": "کمکِ به‌موقع و دقیق",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-16",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-16.jpg",
+      "path": "basir-social/public_media/story-2026-11-16.jpg",
+      "sha256": "92759159ae8df2af112e91cd5777a976f0f38e322d955772d6506c61d3dd1f1d",
+      "topic_id": 15,
+      "category": "گزارش مسئولانه",
+      "title": "برای هر عکس اجازه بگیریم",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    }
+  ]
+}
