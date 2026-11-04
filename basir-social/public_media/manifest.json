@@ -1,7 +1,7 @@
 {
   "source": "basir-social/daily_jihadi_story.py",
   "timezone": "Asia/Tehran",
-  "generated_for_start": "2026-11-04",
+  "generated_for_start": "2026-11-05",
   "generated_by": "automated design runner",
   "image_format": "JPEG",
   "image_sizes": {
@@ -16,45 +16,6 @@
   },
   "publisher_mode": "MEDIA_ONLY_NOT_PUBLISHED",
   "items": [
-    {
-      "date": "2026-11-04",
-      "kind": "STORY",
-      "network_types": {
-        "instagram": "STORY",
-        "facebook": "STORY"
-      },
-      "file": "story-2026-11-04.jpg",
-      "path": "basir-social/public_media/story-2026-11-04.jpg",
-      "sha256": "20a3d5f7b0f8ea82bde51608a5a129446ad0ed363b48fc12fb5787b7b8b7cedd",
-      "topic_id": 3,
-      "category": "آموزش داوطلبی",
-      "title": "از توانایی خود شروع کنیم",
-      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
-      "handle": "@basiryazd",
-      "description": "Original educational poster; not an event report",
-      "ai_generated": false,
-      "review_required_for_any_real_world_event": true
-    },
-    {
-      "date": "2026-11-04",
-      "kind": "POST",
-      "network_types": {
-        "instagram": "POST",
-        "facebook": "POST"
-      },
-      "file": "feed-2026-11-04.jpg",
-      "path": "basir-social/public_media/feed-2026-11-04.jpg",
-      "sha256": "69835dfd6da0705c64c122be3d2ff7032b124dd5cb10707eba6cc7310389b092",
-      "topic_id": 3,
-      "category": "آموزش داوطلبی",
-      "title": "از توانایی خود شروع کنیم",
-      "caption": "🌿 از توانایی خود شروع کنیم\n\nآموزش، تعمیر، مشاوره و همراهی؛ هر مهارت می‌تواند راهی برای خدمت باشد.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
-      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
-      "handle": "@basiryazd",
-      "description": "Original educational feed poster; not an event report",
-      "ai_generated": false,
-      "review_required_for_any_real_world_event": true
-    },
     {
       "date": "2026-11-05",
       "kind": "STORY",
@@ -556,6 +517,45 @@
       "category": "خدمت جهادی",
       "title": "با مردم، نه به‌جای مردم",
       "caption": "🌿 با مردم، نه به‌جای مردم\n\nبرای برنامه‌ریزی فعالیت، تجربه و نظر ساکنان محله را در نظر بگیریم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-18.jpg",
+      "path": "basir-social/public_media/story-2026-11-18.jpg",
+      "sha256": "cea4e051a81a73f088db55c4ba09aaa79109e3c5eb776f06eccd2a7306f11de6",
+      "topic_id": 17,
+      "category": "فرهنگ انفاق",
+      "title": "کمک بی‌منت زیباتر است",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-18.jpg",
+      "path": "basir-social/public_media/feed-2026-11-18.jpg",
+      "sha256": "1ac4fc1acc7a7a50b9a99ce08c6b5c2a9f65c227690e030fc80208c63765f68c",
+      "topic_id": 17,
+      "category": "فرهنگ انفاق",
+      "title": "کمک بی‌منت زیباتر است",
+      "caption": "🌿 کمک بی‌منت زیباتر است\n\nدر یاری‌رساندن، از هر نوع برخوردی که احساس شرمندگی ایجاد می‌کند دوری کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational feed poster; not an event report",
