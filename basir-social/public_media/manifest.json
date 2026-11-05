@@ -1,7 +1,7 @@
 {
   "source": "basir-social/daily_jihadi_story.py",
   "timezone": "Asia/Tehran",
-  "generated_for_start": "2026-11-05",
+  "generated_for_start": "2026-11-06",
   "generated_by": "automated design runner",
   "image_format": "JPEG",
   "image_sizes": {
@@ -16,45 +16,6 @@
   },
   "publisher_mode": "MEDIA_ONLY_NOT_PUBLISHED",
   "items": [
-    {
-      "date": "2026-11-05",
-      "kind": "STORY",
-      "network_types": {
-        "instagram": "STORY",
-        "facebook": "STORY"
-      },
-      "file": "story-2026-11-05.jpg",
-      "path": "basir-social/public_media/story-2026-11-05.jpg",
-      "sha256": "5f6c3d32c4d1a6607c96d399a79e6a8110ab5fa2589a5aa799d71634a6eaa8b9",
-      "topic_id": 4,
-      "category": "انتظار و مسئولیت",
-      "title": "منتظرِ اهل عمل باشیم",
-      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
-      "handle": "@basiryazd",
-      "description": "Original educational poster; not an event report",
-      "ai_generated": false,
-      "review_required_for_any_real_world_event": true
-    },
-    {
-      "date": "2026-11-05",
-      "kind": "POST",
-      "network_types": {
-        "instagram": "POST",
-        "facebook": "POST"
-      },
-      "file": "feed-2026-11-05.jpg",
-      "path": "basir-social/public_media/feed-2026-11-05.jpg",
-      "sha256": "0c73a33114c41afc695ade3cc57e26cd2868454cef8fd80556ddc28dc380aded",
-      "topic_id": 4,
-      "category": "انتظار و مسئولیت",
-      "title": "منتظرِ اهل عمل باشیم",
-      "caption": "🌿 منتظرِ اهل عمل باشیم\n\nیکی از نیازهای کوچک اطرافمان را پیدا کنیم و برای رفع آن قدمی برداریم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
-      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
-      "handle": "@basiryazd",
-      "description": "Original educational feed poster; not an event report",
-      "ai_generated": false,
-      "review_required_for_any_real_world_event": true
-    },
     {
       "date": "2026-11-06",
       "kind": "STORY",
@@ -556,6 +517,45 @@
       "category": "فرهنگ انفاق",
       "title": "کمک بی‌منت زیباتر است",
       "caption": "🌿 کمک بی‌منت زیباتر است\n\nدر یاری‌رساندن، از هر نوع برخوردی که احساس شرمندگی ایجاد می‌کند دوری کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational feed poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-19",
+      "kind": "STORY",
+      "network_types": {
+        "instagram": "STORY",
+        "facebook": "STORY"
+      },
+      "file": "story-2026-11-19.jpg",
+      "path": "basir-social/public_media/story-2026-11-19.jpg",
+      "sha256": "dfc309ef8f3c40b6f385b177ffd3a06489c0af09f69b1355c872e0e5eb65cac0",
+      "topic_id": 18,
+      "category": "آموزش داوطلبی",
+      "title": "وظیفه روشن، خدمت بهتر",
+      "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
+      "handle": "@basiryazd",
+      "description": "Original educational poster; not an event report",
+      "ai_generated": false,
+      "review_required_for_any_real_world_event": true
+    },
+    {
+      "date": "2026-11-19",
+      "kind": "POST",
+      "network_types": {
+        "instagram": "POST",
+        "facebook": "POST"
+      },
+      "file": "feed-2026-11-19.jpg",
+      "path": "basir-social/public_media/feed-2026-11-19.jpg",
+      "sha256": "85c610d24107c54ca741b665c6b21505b9c6f32bc9271302da31ee58c8e69431",
+      "topic_id": 18,
+      "category": "آموزش داوطلبی",
+      "title": "وظیفه روشن، خدمت بهتر",
+      "caption": "🌿 وظیفه روشن، خدمت بهتر\n\nپیش از شروع فعالیت گروهی، نقش‌ها و مسئولیت‌ها را دقیق مشخص کنیم.\n\nقرارگاه جهادی حضرت بقیةالله (عج) | بصیر یزد\n@basiryazd\n\n#بصیر_یزد #کار_خیر #خدمت_اجتماعی",
       "org": "قرارگاه جهادی حضرت بقیةالله (عج)",
       "handle": "@basiryazd",
       "description": "Original educational feed poster; not an event report",
