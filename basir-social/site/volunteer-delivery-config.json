@@ -1,0 +1,5 @@
+{
+  "provider": "email-fallback",
+  "endpoint": null,
+  "note": "Set provider to formspree and endpoint to the unique https://formspree.io/f/ID only after the owner creates and tests the verified form."
+}
