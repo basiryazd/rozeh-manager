@@ -124,7 +124,10 @@ def layout(item,original,format):
     draw_rtl(d,"@basiryazd",1007,foot+224,32,(252,251,245),True)
     # Avoid suggesting that this generic architectural image documents a recent charity action.
     source_label=("تصویرسازی مفهومی اختصاصی | گزارش میدانی نیست" if item["image"]=="OWNED_CONCEPTUAL_YAZD" else "طرح مفهومی | عکس معماری یزد با مجوز بازنشر")
-    draw_rtl(d,source_label,1007,height-60,20,(215,220,203))
+    draw_rtl(d,source_label,1007,height-82,20,(215,220,203))
+    credit=(("عکس: "+item["author"]+" | "+item["license"]+" | Wikimedia Commons")
+            if item["image"]!="OWNED_CONCEPTUAL_YAZD" else "تصویرسازی اختصاصی بصیر یزد")
+    draw_rtl(d,credit,1007,height-45,18,(213,218,198))
     return out
 results=[]
 for topic in TOPICS:
