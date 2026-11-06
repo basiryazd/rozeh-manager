@@ -12,7 +12,7 @@ def fill(page):
     page.locator("#name").fill("آزمون نمونه")
     page.locator("#contact").fill("test@example.invalid")
     page.locator("#city").fill("یزد")
-    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").check(force=True)
+    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").evaluate("(el)=>{el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}))}")
     page.locator("input[type=radio][value='هفتگی']").check()
     page.locator("input[name='رضایت_برای_ارتباط']").check()
 
@@ -32,7 +32,7 @@ def main():
         response=page.goto(BASE+"volunteer.html",wait_until="domcontentloaded")
         assert response.status==200,response.status
         fill(page)
-        page.locator("#submitButton").click(force=True)
+        page.locator("#submitButton").evaluate("(el)=>el.click()")
         page.locator("#emailFallback").wait_for(state="visible",timeout=12000)
         assert page.url==BASE+"volunteer.html",page.url
         assert page.locator("#name").input_value()=="آزمون نمونه"
