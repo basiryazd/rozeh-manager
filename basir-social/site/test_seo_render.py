@@ -19,7 +19,7 @@ class TechnicalSeoTests(unittest.TestCase):
     def test_every_indexable_page_has_unique_title_description_and_canonical(self):
         titles=set()
         for slug in ("","reports.html","news.html","activities-yazd.html",
-                     "volunteer-guide.html","media-kit.html"):
+                     "volunteer-guide.html","media-kit.html","volunteer.html"):
             page=ROOT/(slug or "index.html")
             soup=BeautifulSoup(page.read_text(encoding="utf8"),"html.parser")
             title=soup.find("title")
@@ -40,7 +40,7 @@ class TechnicalSeoTests(unittest.TestCase):
         data=ET.parse(p)
         ns={"s":"http://www.sitemaps.org/schemas/sitemap/0.9"}
         entries=data.findall("s:url",ns)
-        self.assertEqual(len(entries),6)
+        self.assertEqual(len(entries),7)
         urls=[x.find("s:loc",ns).text for x in entries]
         self.assertEqual(len(set(urls)),len(urls))
         self.assertTrue(all(x.startswith(seo_render.BASE) for x in urls))
@@ -68,6 +68,20 @@ class TechnicalSeoTests(unittest.TestCase):
         self.assertTrue(home.find("script",attrs={"type":"application/ld+json"}))
         self.assertTrue(home.find("a",href="volunteer-guide.html"))
         self.assertTrue(home.find("a",href="activities-yazd.html"))
+
+    def test_volunteer_form_collects_minimum_data_and_never_posts_to_github(self):
+        soup=BeautifulSoup((ROOT/"volunteer.html").read_text(encoding="utf8"),"html.parser")
+        form=soup.find("form")
+        self.assertTrue(form)
+        self.assertEqual(form.get("method"),"POST")
+        self.assertTrue(form.get("action","").startswith("https://formsubmit.co/"))
+        self.assertIsNotNone(form.find("input",{"name":"راه_تماس","required":True}))
+        self.assertIsNotNone(form.find("input",{"name":"رضایت_برای_ارتباط","required":True}))
+        self.assertGreaterEqual(len(form.find_all("input",{"type":"checkbox","name":"زمینه_همکاری[]"})),8)
+        self.assertNotIn("github.com",form.get("action"))
+        self.assertNotIn("type=\"file\"",str(form))
+        thanks=BeautifulSoup((ROOT/"volunteer-thanks.html").read_text(encoding="utf8"),"html.parser")
+        self.assertIn("noindex",thanks.find("meta",attrs={"name":"robots"}).get("content"))
 
     def test_static_pages_carry_google_readable_structured_data(self):
         for path in ("reports.html","news.html","activities-yazd.html","volunteer-guide.html"):
