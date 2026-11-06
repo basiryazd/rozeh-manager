@@ -14,8 +14,8 @@ def fill(page):
     page.locator("#contact").fill("test@example.invalid")
     page.locator("#city").fill("یزد")
     page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").check(force=True)
-    page.locator("input[type=radio][value='هفتگی']").check()
-    page.locator("input[name='رضایت_برای_ارتباط']").check()
+    page.locator("input[type=radio][value='هفتگی']").check(force=True)
+    page.locator("input[name='رضایت_برای_ارتباط']").check(force=True)
 
 def main():
     chrome=shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("google-chrome-stable")
