@@ -1,6 +1,8 @@
 name: Basir Yazd public sitemap HTTP diagnostic
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '43 7 * * *'
   push:
     branches: [main]
     paths:
