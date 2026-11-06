@@ -237,7 +237,7 @@ def render_sitemap(data):
         url=SubElement(urls,"url")
         SubElement(url,"loc").text=BASE+slug
         SubElement(url,"lastmod").text=modified if slug in ("","reports.html","news.html") else "2026-11-06"
-    xml=b'<?xml version="1.0" encoding="UTF-8"?>\\n'+tostring(urls,encoding="utf-8")+b"\\n"
+    xml=b'<?xml version="1.0" encoding="UTF-8"?>\n'+tostring(urls,encoding="utf-8")+b"\n"
     write_if_changed(ROOT/"sitemap.xml",xml.decode("utf-8"))
     # RSS serves as a supplemental discovery feed, not a copy of news articles.
     root=Element("rss",{"version":"2.0"})
@@ -265,7 +265,7 @@ def render_sitemap(data):
         SubElement(item,"guid",{"isPermaLink":"false"}).text="basiryazd:news:"+url
         SubElement(item,"description").text="گزیده پیوند به خبرگزاری اصلی "+source
     write_if_changed(ROOT/"feed.xml",
-        (b'<?xml version="1.0" encoding="UTF-8"?>\\n'+tostring(root,encoding="utf-8")+b"\\n").decode("utf-8"))
+        (b'<?xml version="1.0" encoding="UTF-8"?>\n'+tostring(root,encoding="utf-8")+b"\n").decode("utf-8"))
 
 def main():
     data=json.loads((ROOT/"content.json").read_text(encoding="utf8"))
