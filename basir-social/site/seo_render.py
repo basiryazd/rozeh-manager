@@ -267,9 +267,84 @@ def render_sitemap(data):
     write_if_changed(ROOT/"feed.xml",
         (b'<?xml version="1.0" encoding="UTF-8"?>\n'+tostring(root,encoding="utf-8")+b"\n").decode("utf-8"))
 
+
+def _homepage_card(item,kind):
+    """Create a genuinely sourced, text-only editorial card; never embed draft art."""
+    if not isinstance(item,dict):
+        return ""
+    if kind=="report":
+        mid=str(item.get("message_id") or "")
+        source_url=CHANNEL+"/"+mid
+        raw=" ".join(str(item.get("text") or "").split())
+        if not (mid.isdigit() and item.get("url")==source_url and len(raw)>=62):
+            return ""
+        text=raw.casefold()
+        related=("گزارش","جهادی","خدمت","خیریه","نیکوکاری","موکب",
+                 "همدلی","مدرسه","داوطلب","مردمی","بسته","کمک")
+        avoid=("سقوط برگشت","رسوایی","امریکا","آمریکا","تحریم","انتخابات","جنگ")
+        if not any(k in text for k in related) or any(k in text for k in avoid):
+            return ""
+        desc=raw[:250]+("…" if len(raw)>250 else "")
+        return (f'<article class="feed-card"><span class="tag">از کانال رسمی ایتا</span>'
+                f'<h3>گزارش عمومی بصیر یزد | پیام {esc(mid)}</h3>'
+                f'<p>{esc(desc)}</p>'
+                f'<a href="{esc(source_url)}" target="_blank" rel="noopener noreferrer">'
+                'مشاهده منبع اصلی ↖</a></article>')
+    # Third-party headlines: strictly quoted attribution, never a fabricated summary.
+    from urllib.parse import urlparse
+    url=str(item.get("url") or "")
+    title=str(item.get("title") or "")
+    source=str(item.get("source") or "")
+    try:
+        p=urlparse(url)
+        permitted=("www.mehrnews.com","mehrnews.com","www.isna.ir","isna.ir",
+                   "www.tasnimnews.ir","tasnimnews.ir","www.tasnimnews.com",
+                   "tasnimnews.com","www.farsnews.ir","farsnews.ir")
+        if p.scheme!="https" or p.hostname not in permitted or not (18<=len(title)<=210):
+            return ""
+    except ValueError:
+        return ""
+    region="خبر مرتبط با یزد" if item.get("local") else "خبر کشوری"
+    return (f'<article class="feed-card"><span class="tag">{esc(source)} · {esc(region)}</span>'
+            f'<h3>{esc(title)}</h3>'
+            '<p>متن کامل و آخرین اصلاحات خبر را در رسانه منتشرکننده مطالعه کنید.</p>'
+            f'<a href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
+            'مطالعه خبر در منبع اصلی ↖</a></article>')
+
+
+def render_homepage(data):
+    """Refresh source-linked headline lists while preserving ownership token and design."""
+    p=ROOT/"index.html"
+    page=p.read_text(encoding="utf8")
+    blocks=(
+        ("BASIR_REPORTS",data.get("reports",[]),"report",
+         "برای مشاهده گزارش‌های منتشرشده به آرشیو رسمی مراجعه کنید."),
+        ("BASIR_NEWS",data.get("news",[]),"news",
+         "خبرهای مرتبط دارای منبع در حال گردآوری هستند."),
+    )
+    for key,items,kind,empty_text in blocks:
+        begin="<!-- "+key+"_START -->"
+        end="<!-- "+key+"_END -->"
+        if page.count(begin)!=1 or page.count(end)!=1:
+            raise RuntimeError("Missing or duplicate content anchors: "+key)
+        start=page.index(begin)+len(begin)
+        finish=page.index(end,start)
+        card_markup=[s for x in items if (s:=_homepage_card(x,kind))]
+        rendered="\n"+"\n".join(card_markup[:3]) if card_markup else (
+            '\n<div class="feed-empty">'+esc(empty_text)+'</div>')
+        page=page[:start]+rendered+"\n"+page[finish:]
+    if 'name="google-site-verification"' not in page:
+        raise RuntimeError("Home page ownership verification meta tag unexpectedly absent")
+    if "public_media/manifest.json" in page or "../public_media/" in page:
+        raise RuntimeError("An unreviewed gallery or design asset is not allowed on the homepage")
+    write_if_changed(p,page)
+    return True
+
+
 def main():
     data=json.loads((ROOT/"content.json").read_text(encoding="utf8"))
     pages=render_static(data)
+    render_homepage(data)
     render_sitemap(data)
     print("SEO_BUILD_OK","static_indexable_pages",len(pages)+2,
           "source_reports",len(data.get("reports",[])),
