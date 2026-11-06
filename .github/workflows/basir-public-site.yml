@@ -13,6 +13,8 @@ on:
       - 'basir-social/site/seo_render.py'
       - 'basir-social/site/test_seo_render.py'
       - 'basir-social/site/media-kit.html'
+      - 'basir-social/site/volunteer.html'
+      - 'basir-social/site/volunteer-thanks.html'
       - 'basir-social/site/content.json'
       - '.github/workflows/basir-public-site.yml'
 permissions:
