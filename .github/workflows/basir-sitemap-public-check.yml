@@ -1,0 +1,46 @@
+name: Basir Yazd public sitemap HTTP diagnostic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/basir-sitemap-public-check.yml'
+permissions:
+  contents: read
+jobs:
+  public-http-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Check public GitHub Pages and XML sitemap without credentials
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+          from xml.etree import ElementTree as ET
+          BASE="https://basiryazd.github.io/rozeh-manager/basir-social/site/"
+          for name,url in (("homepage",BASE),("sitemap",BASE+"sitemap.xml"),("reports",BASE+"reports.html")):
+              try:
+                  req=Request(url,headers={"User-Agent":"Googlebot"})
+                  with urlopen(req,timeout=22) as resp:
+                      payload=resp.read(900000)
+                      status=resp.status
+                      mime=resp.headers.get("Content-Type","")
+                      final=resp.url
+                  print("PUBLIC_CHECK",name,"status",status,"content_type",mime,
+                        "bytes",len(payload),"url",final,flush=True)
+                  if status!=200: raise RuntimeError("public page not HTTP 200: "+name)
+                  if name=="sitemap":
+                      root=ET.fromstring(payload)
+                      loc=root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
+                      print("SITEMAP_XML_VALID",root.tag,"urls",len(loc),flush=True)
+                      if len(loc)!=6:
+                          raise RuntimeError("unexpected number of sitemap URLs")
+                      if not all((x.text or "").startswith(BASE) for x in loc):
+                          raise RuntimeError("sitemap URLs do not match public property")
+                  elif b"<html" not in payload.lower():
+                      raise RuntimeError("public HTML page invalid: "+name)
+              except (HTTPError,URLError) as e:
+                  print("PUBLIC_CHECK_FAILED",name,type(e).__name__,str(e)[:220],flush=True)
+                  raise
+          PY
