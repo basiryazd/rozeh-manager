@@ -1,0 +1,113 @@
+{
+  "version": 2,
+  "owner_rejected_sources": [
+    "basir-social/public_media/manifest.json"
+  ],
+  "generated": "2026-11-06",
+  "publication": "PREVIEW_NOT_PUBLISHED",
+  "visual_family": "Premium photo-led editorial; distinct concepts; no old geometric template",
+  "items": [
+    {
+      "id": "volunteer",
+      "kind": "STORY",
+      "file": "volunteer-story-1080x1920.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "sha256": "685c1e4114ca9683b1f7607774d866b8ae0fee2204bc71901ff4869c14fb18a8",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:A_windcatcher_and_skylights.jpg",
+      "author": "Rayeshman",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    },
+    {
+      "id": "volunteer",
+      "kind": "POST",
+      "file": "volunteer-feed-1080x1350.jpg",
+      "size": [
+        1080,
+        1350
+      ],
+      "sha256": "a11e3b9422f0150f080d6e88117f1c99fd7efe068a38f2bf46c830abf9a3ffd8",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:A_windcatcher_and_skylights.jpg",
+      "author": "Rayeshman",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    },
+    {
+      "id": "reports",
+      "kind": "STORY",
+      "file": "reports-story-1080x1920.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "sha256": "ac450fac3e592a54fa1d8e094ca9d66a76b44863928b551814f67da650cb4caa",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:Yazd%27s_windcatchers_-_panoramio.jpg",
+      "author": "Alen Ištoković",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    },
+    {
+      "id": "reports",
+      "kind": "POST",
+      "file": "reports-feed-1080x1350.jpg",
+      "size": [
+        1080,
+        1350
+      ],
+      "sha256": "2bf0004783159c2be04fbc43e0ee95e07ff0891fbd9851844516733cc5644db3",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:Yazd%27s_windcatchers_-_panoramio.jpg",
+      "author": "Alen Ištoković",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    },
+    {
+      "id": "yazd",
+      "kind": "STORY",
+      "file": "yazd-story-1080x1920.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "sha256": "ae16b5dc517425fee233e79568aafea9295b0b40206c955591da3dddcfbd0827",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:Windcatcher.jpg",
+      "author": "Mr.Shafagh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    },
+    {
+      "id": "yazd",
+      "kind": "POST",
+      "file": "yazd-feed-1080x1350.jpg",
+      "size": [
+        1080,
+        1350
+      ],
+      "sha256": "f7986d7c8864ef12dfdd85f7d2756da93607ba0a14a5e382784d739f5e0d7332",
+      "design": "PREMIUM_PHOTO_EDITORIAL_V2",
+      "source_photo": "https://commons.wikimedia.org/wiki/File:Windcatcher.jpg",
+      "author": "Mr.Shafagh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "approval": "private_preview_only_until_brand_visual_review",
+      "reportage": false
+    }
+  ]
+}
