@@ -13,6 +13,7 @@ class TechnicalSeoTests(unittest.TestCase):
     def setUpClass(cls):
         cls.data=json.loads((ROOT/"content.json").read_text(encoding="utf8"))
         seo_render.render_static(cls.data)
+        seo_render.render_homepage(cls.data)
         seo_render.render_sitemap(cls.data)
 
     def test_every_indexable_page_has_unique_title_description_and_canonical(self):
@@ -75,6 +76,35 @@ class TechnicalSeoTests(unittest.TestCase):
             payload=json.loads(block.string)
             self.assertEqual(payload["@context"],"https://schema.org")
             self.assertTrue(payload.get("publisher",{}).get("name","").startswith("قرارگاه جهادی"))
+
+    def test_homepage_uses_modern_design_verified_identity_and_no_draft_images(self):
+        home=(ROOT/"index.html").read_text(encoding="utf8")
+        soup=BeautifulSoup(home,"html.parser")
+        self.assertTrue(soup.find(id="identity"))
+        self.assertTrue(soup.find(id="about"))
+        self.assertIn("استان یزد، ایران",soup.get_text())
+        self.assertIn("قرارگاه جهادی حضرت بقیه الله",soup.get_text())
+        self.assertIsNotNone(soup.select_one(".hero-art .art-svg"))
+        self.assertIsNotNone(soup.find("meta",attrs={"name":"google-site-verification"}))
+        self.assertNotIn("public_media/manifest.json",home)
+        self.assertNotIn("../public_media/",home)
+        self.assertFalse(soup.select("img[src*='feed-']"))
+        self.assertFalse(soup.select("img[src*='story-']"))
+        self.assertEqual(soup.select_one("#reportsList") is not None,True)
+        self.assertEqual(soup.select_one("#newsList") is not None,True)
+
+    def test_homepage_curates_only_service_related_sourced_reports(self):
+        self.assertEqual(seo_render._homepage_card(
+            {"message_id":"55","url":"https://eitaa.com/basiryazd/55",
+             "text":"سقوط برگشت ناپذیر امریکا و تحریم و جنگ در گزارش امروز، گزارش سیاسی بدون خدمات اجتماعی"},"report"),"")
+        self.assertEqual(seo_render._homepage_card(
+            {"message_id":"55","url":"https://example.org/55",
+             "text":"گزارش فعالیت جهادی برای داوطلبان محله در چارچوب خدمت مردمی و نیکوکاری به هم‌نوعان"},"report"),"")
+        card=seo_render._homepage_card(
+            {"message_id":"3351","url":"https://eitaa.com/basiryazd/3351",
+             "text":"گزارش فعالیت جهادی داوطلبان یزد در رویدادی مستند و انتشار گزارش از کانال رسمی ایتا"},"report")
+        self.assertIn("https://eitaa.com/basiryazd/3351",card)
+        self.assertNotIn("<img",card)
 
     def test_rss_well_formed_without_fake_news_dates(self):
         xml=ET.parse(ROOT/"feed.xml")
