@@ -4,10 +4,11 @@ Sources: Wikimedia Commons photos with author/license references. All captions
 and rendered copy are reviewed for truthful, conceptual/editorial framing.
 The public image outputs are NOT Instagram publication receipts.
 """
-import hashlib,io,json,os,sys
+import hashlib,io,json,os,sys,time
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request,urlopen
+from urllib.error import HTTPError
 from PIL import Image,ImageDraw,ImageFont,ImageOps,features
 
 DEST=Path("basir-social/site/assets/premium")
@@ -47,10 +48,22 @@ def photo_file(item):
     name=quote(item["image"],safe="")
     url="https://commons.wikimedia.org/wiki/Special:FilePath/"+name
     req=Request(url,headers={"User-Agent":"BasirYazdOpenMedia/1.0 (website basiryazd.github.io); community editorial asset"})
-    with urlopen(req,timeout=55) as r:
-        final=r.geturl()
-        data=r.read(9*1024*1024+1)
-        mime=r.headers.get("content-type","")
+    data=None
+    for attempt in range(4):
+        try:
+            with urlopen(req,timeout=55) as r:
+                final=r.geturl()
+                data=r.read(9*1024*1024+1)
+                mime=r.headers.get("content-type","")
+            break
+        except HTTPError as exc:
+            if exc.code!=429 or attempt==3:
+                raise
+            wait=12*(attempt+1)
+            print("SOURCE_PHOTO_RATE_LIMIT",item["id"],"retry_after_seconds",wait,flush=True)
+            time.sleep(wait)
+    if data is None:
+        raise RuntimeError("Licensed source download returned no bytes")
     if len(data)>9*1024*1024 or len(data)<30000:
         raise RuntimeError("licensed source size outside allowed range")
     img=Image.open(io.BytesIO(data))
@@ -105,6 +118,7 @@ def layout(item,original,format):
     return out
 results=[]
 for topic in TOPICS:
+    time.sleep(4)  # respect public media hosting; no burst downloads
     img=photo_file(topic)
     for kind in ("STORY","POST"):
         name=topic["id"]+"-"+("story-1080x1920" if kind=="STORY" else "feed-1080x1350")+".jpg"
