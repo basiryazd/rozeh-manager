@@ -12,32 +12,42 @@
 <link rel="alternate" type="application/rss+xml" href="feed.xml" title="خوراک خبر و گزارش‌های بصیر یزد">
 <meta name="theme-color" content="#134736">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"اخبار نیکوکاری یزد و ایران؛ گروه‌های جهادی و خیرین | بصیر یزد","inLanguage":"fa-IR","url":"https://basiryazd.github.io/rozeh-manager/basir-social/site/news.html","description":"تیتر خبرهای مرتبط با خیریه، نیکوکاری، گروه‌های جهادی و سازندگی در یزد و ایران؛ منابع: مهر، ایسنا، تسنیم و فارس در صورت دسترسی.","publisher":{"@type":"Organization","name":"قرارگاه جهادی حضرت بقیةالله (عج)","url":"https://eitaa.com/basiryazd","sameAs":["https://eitaa.com/basiryazd","https://t.me/basiryazd","https://www.instagram.com/basiryazd/"]}}</script>
-<style>:root{color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:#243e30;background:#f8f7f2;font-family:Tahoma,Arial,sans-serif;line-height:1.95}
-a{color:#15543d;text-decoration:none}a:hover{text-decoration:underline}
-a:focus-visible{outline:3px solid #b78e4c;outline-offset:3px}
-.wrap{max-width:1070px;width:calc(100% - 36px);margin:auto}
-header{background:#fff;border-bottom:1px solid #dce3da}
-.nav{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:17px 0;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px}.symbol{display:grid;place-items:center;width:49px;height:49px;background:#134736;color:#e4c77e;border-radius:13px;font-size:24px;font-weight:bold}
-.brand strong{display:block;font-size:22px;line-height:1.4}.brand small{display:block;font-size:11px;color:#6d8073}
-nav{display:flex;gap:15px;flex-wrap:wrap}nav a{font-size:13px}
-.hero{background:linear-gradient(130deg,#205941,#11362b);color:#fff;padding:55px 0}
-.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.5;margin:0}
-.hero p{font-size:15px;max-width:800px;color:#e2efe7}
-.meta{font-size:12px;color:#accfba}.main{padding:40px 0 65px}
-.card{background:#fff;border:1px solid #dce5dd;border-radius:17px;padding:25px;margin-bottom:19px;box-shadow:0 5px 20px #1643290d}
-.card h2,.card h3{margin:0 0 11px;color:#194734;font-size:21px;line-height:1.65}
-.card p{font-size:15px;margin:0 0 15px}
-.boxlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.notice{padding:15px 19px;background:#eaf1e9;border-right:4px solid #236c4d;border-radius:10px;font-size:14px;margin:21px 0}
-.stamp{display:inline-block;border-radius:60px;padding:3px 12px;background:#f0f1e7;color:#536b59;font-size:12px;margin-bottom:12px}
-.btn{display:inline-block;border:1px solid #1a6349;border-radius:11px;padding:8px 16px;font-weight:bold;font-size:13px;margin:5px 0}
+<style>@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--forest:#133c30;--gold:#d8b579;--paper:#f7f7f3;--ink:#1d3429;--muted:#68776b;--stroke:#dfe6dd;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Vazirmatn,Tahoma,Arial,sans-serif;line-height:2;-webkit-font-smoothing:antialiased}
+a{color:#20664a;text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:3px solid #b78e4c;outline-offset:3px}
+.wrap{max-width:1140px;width:calc(100% - 56px);margin:auto}
+.topbar{background:#123a2d;color:#c7dbce;font-size:11px}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:36px}.topbar a{color:#e0eee4}
+header{background:rgba(255,255,253,.96);backdrop-filter:blur(15px);border-bottom:1px solid #e3eae2;position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:15px 0}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.symbol{display:grid;place-items:center;width:55px;height:55px;background:var(--forest);color:var(--gold);border-radius:19px;font-size:25px;font-weight:900;box-shadow:0 8px 23px #17432b22}
+.brand strong{display:block;font-size:23px;line-height:1.42;white-space:nowrap;font-weight:900;color:#183f2e}.brand small{display:block;font-size:10px;color:#647b68;white-space:nowrap}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{font-size:12px;color:#3e5746;font-weight:750;white-space:nowrap}nav a:hover{color:#a07941}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 16% 13%,#30634b 0,transparent 36%),linear-gradient(114deg,#103125,#20523c);color:#fff;padding:77px 0 82px;border-bottom:7px solid #d2b27d}
+.hero:after{position:absolute;content:"";left:-120px;bottom:-230px;height:520px;width:520px;border:1px solid #ffffff28;border-radius:50%;box-shadow:0 0 0 47px #ffffff08,0 0 0 108px #ffffff06;pointer-events:none}
+.hero h1{font-size:clamp(30px,3.6vw,50px);line-height:1.6;margin:14px 0 13px;max-width:920px;letter-spacing:-.8px;font-weight:900}
+.hero p{font-size:clamp(14px,1.6vw,17px);max-width:850px;color:#d4e6d9;line-height:2.3}
+.meta{font-size:12px;color:#edd29a;font-weight:750}
+.main{padding:54px 0 86px;min-height:38vh}
+.card{background:#fff;border:1px solid #e1e8df;border-radius:23px;padding:33px 38px;margin-bottom:22px;box-shadow:0 15px 42px #1b432b0c;overflow-wrap:anywhere;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#c4d6c4}
+.card h2,.card h3{margin:0 0 14px;color:#194533;font-size:clamp(19px,2.2vw,26px);line-height:1.8}
+.card p{font-size:14px;line-height:2.3;color:#576b5d;margin:0 0 18px}
+.boxlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.notice{padding:18px 23px;background:#eaf2e9;border-right:4px solid #3b7953;border-radius:14px;font-size:13px;margin:22px 0;color:#4b6d58}
+.stamp{display:inline-flex;align-items:center;gap:8px;border-radius:50px;padding:4px 12px;background:#f1f4eb;color:#477251;font-size:11px;font-weight:800;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:9px;background:#1a4d38;color:#fff;border:1px solid #1a4d38;border-radius:12px;padding:8px 18px;font-weight:800;font-size:12px;margin:5px 0}
+.btn:hover{background:#255f45;color:#fff;text-decoration:none}
 .tabs{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 26px}.tabs a{border:1px solid #bed3c4;border-radius:100px;padding:6px 14px;font-size:13px}
-ul{padding-right:23px}li{margin-bottom:8px}
-footer{background:#143629;color:#e4efe7;padding:30px 0;font-size:13px}
-footer a{color:#fff;margin-left:15px}.note{font-size:13px;color:#62786b}
-@media(max-width:680px){.boxlist{grid-template-columns:1fr}.hero{padding:36px 0}.main{padding:27px 0 50px}nav{gap:10px}.card{padding:20px}.brand strong{font-size:20px}}</style></head><body>
+ul{padding-right:26px}li{margin-bottom:11px;font-size:14px;color:#445d4a;line-height:2.15}
+footer{background:#103025;color:#dce9df;padding:45px 0;font-size:12px}footer .wrap{display:flex;flex-direction:column;gap:10px}footer strong{font-size:18px;font-weight:900;color:#f4f4ea}footer p{color:#b8d1bc;margin:0}footer a{color:#e8dbc0;margin-left:18px;display:inline-block}
+.note{font-size:12px;color:#64776c}
+@media(max-width:1000px){.nav{align-items:flex-start;flex-direction:column;gap:8px}nav{gap:12px}.hero{padding:55px 0}}
+@media(max-width:680px){.wrap{width:calc(100% - 30px)}.topbar .wrap{font-size:9px}.symbol{height:47px;width:47px;border-radius:15px}.brand strong{font-size:20px}.brand small{font-size:9px;white-space:normal}nav a{font-size:11px}.hero{padding:40px 0 50px}.hero h1{font-size:30px}.main{padding:31px 0 50px}.card{padding:23px 20px;border-radius:19px}.boxlist{grid-template-columns:1fr}footer a{margin-left:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}</style></head><body>
+<div class="topbar"><div class="wrap"><span>بصیر یزد | رسانه خدمت و نیکوکاری</span><span>از یزد تا سراسر ایران</span></div></div>
 <header><div class="wrap nav"><a href="./" class="brand"><span class="symbol">ب</span><span><strong>بصیر یزد</strong><small>قرارگاه جهادی حضرت بقیه الله(عج)</small></span></a>
 <nav aria-label="فهرست سایت"><a href="./">صفحه نخست</a><a href="reports.html">گزارش‌های جهادی</a><a href="news.html">اخبار نیکوکاری</a><a href="activities-yazd.html">جهادگران یزد</a><a href="volunteer-guide.html">راهنمای داوطلبی</a><a href="media-kit.html">همکاری رسانه‌ای</a></nav></div></header>
 <section class="hero"><div class="wrap"><div class="meta">بصیر یزد | رسانه خدمت و فعالیت‌های جهادی</div>
