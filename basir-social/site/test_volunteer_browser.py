@@ -13,7 +13,7 @@ def fill(page):
     page.locator("#name").fill("آزمون نمونه")
     page.locator("#contact").fill("test@example.invalid")
     page.locator("#city").fill("یزد")
-    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").check(force=True)
+    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").evaluate("(el)=>{el.checked=true;el.dispatchEvent(new Event('change',{bubbles:true}))}")
     page.locator("input[type=radio][value='هفتگی']").check(force=True)
     page.locator("input[name='رضایت_برای_ارتباط']").check(force=True)
 
@@ -33,7 +33,7 @@ def main():
         assert response.status==200
         assert page.locator("#deliveryNotice").inner_text().find("ایمیل")>=0
         fill(page)
-        page.locator("#submitButton").click(force=True)
+        page.locator("#submitButton").evaluate("(el)=>el.click()")
         page.locator("#emailFallback").wait_for(state="visible",timeout=4000)
         href=unquote(page.locator("#emailFallback").get_attribute("href"))
         assert href.startswith("mailto:basiryazd@gmail.com?"),href[:80]
@@ -54,7 +54,7 @@ def main():
         page.goto(BASE+"volunteer.html",wait_until="networkidle")
         assert "ارسال امن" in page.locator("#submitButton").inner_text()
         fill(page)
-        page.locator("#submitButton").click(force=True)
+        page.locator("#submitButton").evaluate("(el)=>el.click()")
         page.wait_for_url(BASE+"volunteer-thanks.html",timeout=9000)
         assert "سپاسگزاریم" in page.locator("body").inner_text()
         print("VOLUNTEER_MOCK_CONFIRMED_PROVIDER_ACCEPTANCE_PASS",flush=True)
@@ -65,7 +65,7 @@ def main():
                  headers={"Access-Control-Allow-Origin":"*"},body="<h1>Connection timed out</h1>"))
         page.goto(BASE+"volunteer.html",wait_until="networkidle")
         fill(page)
-        page.locator("#submitButton").click(force=True)
+        page.locator("#submitButton").evaluate("(el)=>el.click()")
         page.locator("#emailFallback").wait_for(state="visible",timeout=9000)
         assert "تأیید قطعی" in page.locator("#submitStatus").inner_text()
         assert page.url==BASE+"volunteer.html"
