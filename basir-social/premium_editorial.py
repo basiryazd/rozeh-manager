@@ -68,10 +68,13 @@ def font(sz,bold=False):
   if Path(file).exists():return ImageFont.truetype(file,sz,layout_engine=ImageFont.Layout.RAQM)
  raise RuntimeError("No Arabic-compatible font is installed")
 def rtl(draw,s,x,y,sz,color,bold=False):
- f=font(sz,bold)
- box=draw.textbbox((x,y),s,font=f,anchor="ra",direction="rtl",language="fa")
- if box[0]<28 or box[2]>1080 or box[1]<0:
-  raise RuntimeError(f"Persian title overflows canvas: {s!r} {box}")
+ while sz>=19:
+  f=font(sz,bold)
+  box=draw.textbbox((x,y),s,font=f,anchor="ra",direction="rtl",language="fa")
+  if box[0]>=28 and box[2]<=1080 and box[1]>=0: break
+  sz-=1
+ else:
+  raise RuntimeError(f"Persian content cannot fit its safe area: {s!r} {box}")
  draw.text((x,y),s,font=f,anchor="ra",direction="rtl",language="fa",fill=color)
 def image_crop(img,size):
  return ImageOps.fit(img,size,method=Image.Resampling.LANCZOS,centering=(.5,.45)).filter(ImageFilter.GaussianBlur(.28))
