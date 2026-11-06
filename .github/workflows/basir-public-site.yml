@@ -1,0 +1,56 @@
+name: Basir Yazd public newsroom — automatic verified updates
+on:
+  workflow_dispatch:
+  schedule:
+    # Best-effort updates six times daily, Asia/Tehran editorial timezone.
+    - cron: '19 1,5,9,13,17,21 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'basir-social/site/index.html'
+      - 'basir-social/site/update_site.py'
+      - 'basir-social/site/test_update_site.py'
+      - 'basir-social/site/content.json'
+      - '.github/workflows/basir-public-site.yml'
+permissions:
+  contents: write
+concurrency:
+  group: basiryazd-public-newsroom
+  cancel-in-progress: false
+jobs:
+  update-newsroom:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install constrained public-source reader
+        run: python -m pip install 'requests>=2.32,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Verify public news and privacy safeguards
+        run: |
+          cd basir-social/site
+          python -m unittest test_update_site.py
+      - name: Refresh only real source-linked public reports and news headlines
+        run: python -u basir-social/site/update_site.py
+      - name: Commit verified public content, keeping existing data on source outages
+        run: |
+          git config user.name "basiryazd-public-newsroom"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add basir-social/site/content.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Basir public newsroom with attributed sources [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No verified site content changes"
+          fi
+      - name: Keep hosting separate from existing internal management application
+        run: |
+          echo 'Website frontend is stored in basir-social/site.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No private documents, personal records or original source media are copied here.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Pages/domain hosting requires its own approved deployment; this workflow does not replace the separate event-management web app.' >> "$GITHUB_STEP_SUMMARY"
