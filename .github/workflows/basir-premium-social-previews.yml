@@ -1,0 +1,56 @@
+name: Basir premium editorial previews (private review; no publishing)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'basir-social/generate_premium_campaign.py'
+      - '.github/workflows/basir-premium-social-previews.yml'
+      - 'basir-social/site/assets/volunteer-campaign-1080x1350.jpg'
+permissions:
+  contents: read
+jobs:
+  render-reviewed-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Noto Arabic typeface and image tools
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install -y fonts-noto-core
+          python -m pip install 'Pillow>=11,<13'
+      - name: Render six premium Arabic-script photo-led visuals
+        run: |
+          python basir-social/generate_premium_campaign.py
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          from PIL import Image
+          root=Path('basir-social/site/assets/premium')
+          data=json.loads((root/'manifest.json').read_text('utf8'))
+          assert data['publisher_mode'].startswith('DRAFT_ONLY')
+          assert len(data['items'])==6
+          assert len({x['sha256'] for x in data['items']})==6
+          for item in data['items']:
+              file=root/item['file']
+              with Image.open(file) as im:
+                  assert im.size==tuple(item['size']),item['file']
+                  assert im.format=='JPEG'
+              assert hashlib.sha256(file.read_bytes()).hexdigest()==item['sha256']
+              assert item['reviewed'] is False and item['publication_allowed'] is False
+          print('PREMIUM_QUALITY_CHECK_PASS',len(data['items']))
+          PY
+      - name: Store previews privately, not on the live public site
+        uses: actions/upload-artifact@v4
+        with:
+          name: basiryazd-premium-6-private-candidates
+          path: basir-social/site/assets/premium/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Publishing gate is not bypassed
+        run: |
+          echo 'Six concept visuals were rendered in CI. They are not approved for publication, have not been pushed to public assets and are not queued in any platform.' >> "$GITHUB_STEP_SUMMARY"
