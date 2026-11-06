@@ -1,0 +1,63 @@
+name: Basir modern website visual QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/basir-modern-visual-qa.yml'
+permissions:
+  contents: read
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser driver
+        run: python -m pip install 'playwright>=1.54,<2'
+      - name: Inspect production homepage on desktop and mobile
+        run: |
+          python - <<'PY'
+          import shutil
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          url="https://basiryazd.github.io/rozeh-manager/basir-social/site/"
+          Path("visual-check").mkdir(exist_ok=True)
+          with sync_playwright() as p:
+              launch={"headless":True,"args":["--no-sandbox","--disable-dev-shm-usage"]}
+              chrome=shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("google-chrome-stable")
+              if not chrome:
+                  raise RuntimeError("Chrome is not installed on runner; no visual review claim")
+              browser=p.chromium.launch(executable_path=chrome,**launch)
+              for label,viewport in (("desktop",{"width":1440,"height":1000}),
+                                     ("mobile",{"width":390,"height":844})):
+                  context=browser.new_context(viewport=viewport,device_scale_factor=1,
+                                              is_mobile=(label=="mobile"),has_touch=(label=="mobile"))
+                  page=context.new_page()
+                  response=page.goto(url,wait_until="domcontentloaded",timeout=30000)
+                  page.locator("#identity").wait_for()
+                  page.screenshot(path=f"visual-check/basir-{label}.png",full_page=True,animations="disabled")
+                  dims=page.evaluate("""() => ({outer:document.documentElement.scrollWidth,
+                    viewport:window.innerWidth,images:document.querySelectorAll('img').length,
+                    legacy:document.documentElement.innerHTML.includes('public_media/manifest.json'),
+                    identity:document.getElementById('identity').textContent.includes('استان یزد'),
+                    sourceCards:document.querySelectorAll('.feed-card').length})""")
+                  print("VISUAL_QA",label,"status",response.status,"dimensions",dims,flush=True)
+                  if response.status!=200 or dims["legacy"] or dims["images"] or not dims["identity"]:
+                      raise RuntimeError("One of the modern site integrity gates failed: "+label)
+                  if dims["outer"]>dims["viewport"]+3:
+                      raise RuntimeError("Horizontal overflow on "+label)
+                  context.close()
+              browser.close()
+          PY
+      - name: Store visual review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: basir-modern-ui-desktop-mobile
+          path: visual-check/*.png
+          retention-days: 2
+          if-no-files-found: warn
