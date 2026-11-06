@@ -238,7 +238,7 @@ def write_if_changed(path,text):
 
 def render_sitemap(data):
     static=["","reports.html","news.html","activities-yazd.html",
-            "volunteer-guide.html","media-kit.html"]
+            "volunteer-guide.html","media-kit.html","volunteer.html"]
     modified=str(data.get("updated_at") or "2026-11-06")[:10]
     if not re.fullmatch(r"20\d{2}-\d{2}-\d{2}",modified):
         modified="2026-11-06"
