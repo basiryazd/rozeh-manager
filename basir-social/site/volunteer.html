@@ -63,87 +63,105 @@ footer{text-align:center;color:#77877c;font-size:12px;padding:25px 0;border-top:
 <label><input type="radio" name="زمان_همکاری" value="فعلاً نامشخص"> فعلاً نامشخص</label>
 </div>
 <div class="field full" style="margin-top:18px"><label for="note">مهارت یا توضیح تکمیلی <span class="help">(اختیاری)</span></label><textarea name="توضیحات_تکمیلی" id="note" maxlength="500" placeholder="چه مهارتی دارید یا دوست دارید چگونه کمک کنید؟ از ارسال اطلاعات حساس خودداری کنید."></textarea></div>
-<label class="consent"><input type="checkbox" name="رضایت_برای_ارتباط" value="دارم" required><span>با ارسال این فرم، موافقم اطلاعات درج‌شده برای بررسی درخواست همکاری به ایمیل رسمی بصیر یزد ارسال شود و برای هماهنگی احتمالی با من تماس بگیرند. اطلاعات از طریق سرویس FormSubmit منتقل می‌شود و طبق اعلام این سرویس، امکان نگهداری موقت تا ۳۰ روز وجود دارد. اطلاعات عمومی نخواهد شد.</span></label>
-<button type="submit" class="submit" id="submitButton">ارسال اعلام آمادگی به بصیر یزد ←</button><button type="button" id="emailAlternative" class="submit" style="margin-top:12px;background:#fff;color:#174f3a;border:1px solid #b3d0bc;box-shadow:none">ارسال با ایمیل شخصی (مسیر جایگزین) ↗</button><p id="submitStatus" role="status" aria-live="polite" style="display:none;margin:12px 0;padding:13px;border-radius:12px;font-size:13px"></p><a id="emailFallback" style="display:none;border-radius:12px;background:#f1e7d1;border:1px solid #dcc4a0;padding:13px 18px;text-align:center;font-weight:700;margin:12px 0;display:none" href="#" rel="nofollow">ارسال خصوصی از طریق برنامه ایمیل خودم ↗</a>
-<p class="note">ارسال خودکار به سرویس FormSubmit وابسته است؛ اگر این سرویس در دسترس نباشد، با دکمه «ارسال با ایمیل شخصی» می‌توانید اطلاعات را در برنامه ایمیل خود آماده و ارسال کنید. بازشدن برنامه ایمیل به معنی ثبت درخواست نیست؛ باید دکمه ارسال ایمیل را هم بزنید. برای امنیت شما، کد ملی، نشانی منزل، مدارک شناسایی، شماره کارت یا اطلاعات پزشکی درخواست نمی‌شود.</p><noscript><p class="note">برای استفاده از فرم، جاوااسکریپت مرورگر باید روشن باشد. در غیر این صورت درخواست را از ایمیل خود به basiryazd@gmail.com بفرستید.</p></noscript>
+<label class="consent"><input type="checkbox" name="رضایت_برای_ارتباط" value="دارم" required><span>با ارسال درخواست، موافقم اطلاعات این فرم فقط برای بررسی همکاری به ایمیل رسمی بصیر یزد ارسال و در صورت نیاز برای هماهنگی با من تماس گرفته شود. در روش ایمیلی، ارسال نهایی را خودم در برنامه ایمیل انجام می‌دهم؛ پس از اتصال سرویس خودکارِ دارای مجوز، اطلاعات از طریق آن سرویس ارسال می‌شود. اطلاعات عمومی منتشر نمی‌شود.</span></label>
+<p id="deliveryNotice" role="status" aria-live="polite" class="note">در حال بررسی مسیر ارسال فرم…</p><button type="submit" class="submit" id="submitButton">آماده‌سازی ایمیل همکاری ←</button><p id="submitStatus" role="status" aria-live="polite" style="display:none;margin:12px 0;padding:13px;border-radius:12px;font-size:13px"></p><a id="emailFallback" style="display:none;border-radius:12px;background:#f1e7d1;border:1px solid #dcc4a0;padding:13px 18px;text-align:center;font-weight:700;margin:12px 0" href="#" rel="nofollow">بازکردن ایمیل آماده‌شده ↗</a><button type="button" id="copyFallback" style="display:none;width:100%;border:1px solid #b4caba;color:#214f37;background:white;padding:11px;border-radius:12px;font:inherit;margin:8px 0;cursor:pointer">کپی متن درخواست برای ارسال دستی</button>
+<p class="note">تا زمانی که ارسال خودکار به یک سرویس سالم و تأییدشده متصل نشده، درخواست در برنامه ایمیل شما آماده می‌شود؛ باید دکمه «ارسال» را در همان برنامه بزنید. باز شدن برنامه ایمیل به معنی ثبت نهایی نیست. کد ملی، نشانی منزل، مدارک شناسایی، شماره کارت و اطلاعات پزشکی درخواست نمی‌شود.</p><noscript><p class="note">برای استفاده از فرم، جاوااسکریپت مرورگر باید روشن باشد. در غیر این صورت درخواست را از ایمیل خود به basiryazd@gmail.com بفرستید.</p></noscript>
 </form>
 </section>
 <aside class="side"><div class="sidecard dark"><h2>هر توانایی، فرصتی برای خدمت است</h2><p>همکاری فقط کمک مالی نیست؛ از طراحی و آموزش گرفته تا پشتیبانی و کار میدانی، می‌توان متناسب با توانایی و زمان مشارکت کرد.</p><a href="volunteer-guide.html">راهنمای مشارکت مسئولانه ↖</a></div>
-<div class="sidecard"><h2>بعد از ثبت فرم چه می‌شود؟</h2><ul><li>پاسخ به ایمیل اعلام‌شده برای بصیر یزد ارسال می‌شود.</li><li>مسئولان در صورت نیاز و امکان، برای هماهنگی تماس می‌گیرند.</li><li>فرم، تعهد مالی یا پذیرش خودکار ایجاد نمی‌کند.</li></ul><p>برای گزارش‌های رسمی و خبرهای روز به <a href="https://eitaa.com/basiryazd">ایتا</a> و <a href="https://t.me/basiryazd">تلگرام</a> سر بزنید.</p></div>
+<div class="sidecard"><h2>بعد از ثبت فرم چه می‌شود؟</h2><ul><li>پس از ارسال نهایی ایمیل در برنامه شما یا تأیید موفق سرور، درخواست به صندوق بصیر یزد تحویل داده می‌شود.</li><li>مسئولان در صورت نیاز و امکان، برای هماهنگی تماس می‌گیرند.</li><li>فرم، تعهد مالی یا پذیرش خودکار ایجاد نمی‌کند.</li></ul><p>برای گزارش‌های رسمی و خبرهای روز به <a href="https://eitaa.com/basiryazd">ایتا</a> و <a href="https://t.me/basiryazd">تلگرام</a> سر بزنید.</p></div>
 </aside></div>
 </main><footer>بصیر یزد · قرارگاه جهادی حضرت بقیه الله(عج) · خدمت مسئولانه با رعایت حریم خصوصی</footer>
 <script>
 (function(){
+"use strict";
 const form=document.getElementById("volunteerForm");
+const button=document.getElementById("submitButton");
 const status=document.getElementById("submitStatus");
 const fallback=document.getElementById("emailFallback");
-const button=document.getElementById("submitButton");
-const emailAlternative=document.getElementById("emailAlternative");
-function show(message,error){
+const copyButton=document.getElementById("copyFallback");
+const delivery=document.getElementById("deliveryNotice");
+const recipient="basiryazd@gmail.com";
+const allowedEndpoint=/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]{6,32}$/;
+let verifiedEndpoint=null;
+let preparedText="";
+fetch("./volunteer-delivery-config.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(cfg=>{
+  if(cfg && cfg.provider==="formspree" && typeof cfg.endpoint==="string" && allowedEndpoint.test(cfg.endpoint)){
+    verifiedEndpoint=cfg.endpoint;
+    button.textContent="ارسال امن اعلام آمادگی ←";
+    delivery.textContent="ارسال خودکار این فرم فعال است؛ فقط در صورت پاسخ موفق سرویس، رسید ثبت نشان داده می‌شود.";
+  }else{
+    delivery.textContent="ارسال خودکار موقتاً غیرفعال است. بعد از تکمیل فرم، ایمیل آماده‌شده را شخصاً ارسال کنید؛ درخواست شما در سایت ذخیره نمی‌شود.";
+  }
+}).catch(()=>{
+  delivery.textContent="ارسال خودکار در دسترس نیست؛ ارسال از برنامه ایمیل شخصی همچنان قابل استفاده است.";
+});
+function message(text,error){
   status.style.display="block";
   status.style.background=error?"#fff0ea":"#ecf6ed";
-  status.style.color=error?"#9b3d30":"#265e42";
-  status.textContent=message;
+  status.style.color=error?"#943b30":"#265e42";
+  status.textContent=text;
 }
-function prepareEmail(){
-  const formData=new FormData(form);
-  const name=String(formData.get("نام_و_نام_خانوادگی")||"").slice(0,90);
-  const contact=String(formData.get("راه_تماس")||"").slice(0,100);
-  const city=String(formData.get("شهر_یا_شهرستان")||"").slice(0,75);
-  const interests=formData.getAll("زمینه_همکاری[]").map(String);
-  const availability=String(formData.get("زمان_همکاری")||"");
-  const note=String(formData.get("توضیحات_تکمیلی")||"").slice(0,500);
+function prepare(details){
+  const lines=["نام و نام خانوادگی: "+String(details.get("نام_و_نام_خانوادگی")||"").slice(0,90),
+    "راه ارتباطی: "+String(details.get("راه_تماس")||"").slice(0,100),
+    "شهر: "+String(details.get("شهر_یا_شهرستان")||"").slice(0,75),
+    "زمینه همکاری: "+details.getAll("زمینه_همکاری[]").map(String).join("، "),
+    "زمان همکاری: "+String(details.get("زمان_همکاری")||""),
+    "مهارت و توضیحات: "+String(details.get("توضیحات_تکمیلی")||"").slice(0,500),
+    "رضایت برای ارتباط درباره همکاری: بله"];
+  preparedText=lines.join("\n");
   const subject="اعلام آمادگی همکاری داوطلبانه | بصیر یزد";
-  const mailBody=["نام و نام خانوادگی: "+name,"راه ارتباطی: "+contact,
-    "شهر: "+city,"زمینه‌ها: "+interests.join("، "),
-    "زمان همکاری: "+availability,"توضیحات: "+note,
-    "من با ارتباط جهت هماهنگی موافقم."].join("\n");
-  const url="mailto:basiryazd@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(mailBody);
-  fallback.href=url;
-  return url;
-}
-emailAlternative.addEventListener("click",function(){
-  const checks=[...document.querySelectorAll("#interestOptions input[type=checkbox]")];
-  const err=document.getElementById("interestError");
-  if(!checks.some(x=>x.checked)){err.style.display="block";checks[0].focus();return}
-  err.style.display="none";
-  if(!form.reportValidity())return;
-  const url=prepareEmail();
-  show("برنامه ایمیل باز می‌شود؛ برای تحویل درخواست لازم است آن را داخل برنامه ایمیل ارسال کنید. تا آن زمان هیچ ثبت قطعی انجام نشده است.",false);
+  fallback.href="mailto:"+recipient+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(preparedText);
   fallback.style.display="block";
-  window.location.href=url;
-});
-form.addEventListener("submit",async function(e){
-  e.preventDefault();
+  copyButton.style.display="block";
+}
+function validateInterests(){
   const checks=[...document.querySelectorAll("#interestOptions input[type=checkbox]")];
   const err=document.getElementById("interestError");
-  if(!checks.some(x=>x.checked)){
-    err.style.display="block";checks[0].focus();return;
-  }
+  if(!checks.some(x=>x.checked)){err.style.display="block";checks[0].focus();return false}
   err.style.display="none";
-  if(!form.reportValidity())return;
+  return true;
+}
+form.addEventListener("submit",async event=>{
+  event.preventDefault();
+  if(!validateInterests()||!form.reportValidity())return;
   const details=new FormData(form);
-  prepareEmail();
-  fallback.style.display="none";button.disabled=true;
-  show("در حال ارسال درخواست و بررسی پاسخ سرویس…",false);
-  try {
-    const ctrl=new AbortController();
-    const timeout=setTimeout(()=>ctrl.abort(),12000);
-    let response;
-    try {
-      response=await fetch("https://formsubmit.co/ajax/basiryazd@gmail.com",{
-        method:"POST",body:details,headers:{"Accept":"application/json"},signal:ctrl.signal});
-    }finally{clearTimeout(timeout)}
-    const result=await response.json().catch(()=>({}));
-    if(!response.ok||String(result.success).toLowerCase()!=="true"){
-      throw new Error("Submission provider not confirmed");
-    }
-    window.location.href="./volunteer-thanks.html";
-  } catch(_err){
-    show("سرویس دریافت فرم در حال حاضر پاسخ تأییدشده نداد (ممکن است خطای ۵۲۲ باشد). درخواست شما ثبت‌شده محسوب نمی‌شود. با دکمه زیر می‌توانید متن آن را در برنامه ایمیل خود باز کرده و شخصاً ارسال کنید؛ پیش از ارسال مجدد، از تکراری نبودن درخواست اطمینان پیدا کنید.",true);
-    fallback.style.display="block";
+  prepare(details);
+  if(!verifiedEndpoint){
+    message("ایمیل درخواست آماده شد؛ روی «بازکردن ایمیل آماده‌شده» بزن و سپس در برنامه ایمیل دکمه ارسال را انتخاب کن. در این مرحله، درخواست هنوز ثبت نشده است.",false);
     fallback.focus();
-  }finally{button.disabled=false}
+    return;
+  }
+  button.disabled=true;
+  button.textContent="در حال ارسال درخواست…";
+  message("در حال انتظار برای تأیید ثبت درخواست توسط سرویس…",false);
+  const ctrl=new AbortController();
+  const timer=setTimeout(()=>ctrl.abort(),18000);
+  try{
+    const resp=await fetch(verifiedEndpoint,{method:"POST",body:details,headers:{"Accept":"application/json"},signal:ctrl.signal});
+    const result=await resp.json().catch(()=>({}));
+    if(!resp.ok||result.error||(Array.isArray(result.errors)&&result.errors.length)){
+      throw new Error("Provider failed");
+    }
+    location.assign("./volunteer-thanks.html");
+  }catch(_){
+    message("تأیید قطعی از سرویس دریافت نشد. ممکن است درخواست ارسال شده باشد؛ پیش از ارسال مجدد ایمیل و پیام‌های قبلی را بررسی کنید. در صورت نیاز، لینک ایمیل جایگزین پایین آماده است.",true);
+    fallback.focus();
+  }finally{
+    clearTimeout(timer);
+    button.disabled=false;
+    button.textContent="ارسال امن اعلام آمادگی ←";
+  }
+});
+copyButton.addEventListener("click",async()=>{
+  if(!preparedText)return;
+  try{
+    await navigator.clipboard.writeText(preparedText);
+    message("متن درخواست کپی شد؛ آن را در یک ایمیل خصوصی به "+recipient+" ارسال کنید.",false);
+  }catch(_){
+    message("کپی خودکار در مرورگر ممکن نشد؛ از لینک «بازکردن ایمیل آماده‌شده» استفاده کنید.",true);
+  }
 });
 })();
 </script>
