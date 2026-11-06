@@ -1,0 +1,79 @@
+name: Basir Yazd — professional volunteer campaign media
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'basir-social/site/campaign-poster.html'
+      - '.github/workflows/basir-volunteer-campaign-media.yml'
+permissions:
+  contents: write
+concurrency:
+  group: basiryazd-volunteer-campaign-assets
+  cancel-in-progress: false
+jobs:
+  render-public-social-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser and graphic tools
+        run: |
+          python -m pip install 'Pillow>=11,<13' 'qrcode>=8,<9' 'playwright>=1.55,<2'
+          python -m playwright install --with-deps chromium
+      - name: Render 4-to-5 publication and 9-to-16 story with working QR
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageOps,ImageFilter
+          import qrcode
+          from playwright.sync_api import sync_playwright
+          root=Path("basir-social/site").resolve()
+          assets=root/"assets"
+          assets.mkdir(exist_ok=True)
+          qr=qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H,box_size=9,border=2)
+          qr.add_data("https://basiryazd.github.io/rozeh-manager/basir-social/site/volunteer.html")
+          qr.make(fit=True)
+          qr.make_image(fill_color="#154634",back_color="white").save(assets/"volunteer-qr.png")
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True)
+              page=browser.new_page(viewport={"width":1080,"height":1350},device_scale_factor=1)
+              page.goto((root/"campaign-poster.html").as_uri(),wait_until="load")
+              page.screenshot(path=str(assets/"volunteer-campaign-screenshot.png"))
+              browser.close()
+          original=Image.open(assets/"volunteer-campaign-screenshot.png").convert("RGB")
+          if original.size!=(1080,1350):
+              raise RuntimeError("Unexpected marketing asset dimensions")
+          original.save(assets/"volunteer-campaign-1080x1350.jpg",
+                        "JPEG",quality=94,subsampling=0,optimize=True)
+          story=ImageOps.fit(original,(1080,1920),method=Image.Resampling.LANCZOS).filter(ImageFilter.GaussianBlur(34))
+          backdrop=Image.new("RGB",story.size,"#164334")
+          story=Image.blend(story,backdrop,.55)
+          story.paste(original,(0,270))
+          story.save(assets/"volunteer-campaign-story-1080x1920.jpg",
+                     "JPEG",quality=94,subsampling=0,optimize=True)
+          (assets/"volunteer-campaign-screenshot.png").unlink(missing_ok=True)
+          print("CAMPAIGN_RENDER_OK",original.size,"story",(1080,1920))
+          PY
+      - name: Persist public shareable official media once
+        run: |
+          git config user.name "basiryazd-campaign-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add basir-social/site/assets/volunteer-qr.png basir-social/site/assets/volunteer-campaign-1080x1350.jpg basir-social/site/assets/volunteer-campaign-story-1080x1920.jpg
+          if git diff --cached --quiet; then
+            echo 'No asset changes.'
+          else
+            git commit -m "Publish modern Basir Yazd volunteer recruitment assets [skip ci]"
+            git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
+          fi
+      - name: Explain campaign safety and intended use
+        if: always()
+        run: |
+          echo 'These are illustrative recruitment creatives, not claimed evidence of an actual charity field event.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Campaign CTA QR leads directly to the Basir Yazd volunteer form; never claim a submission was emailed unless the provider confirms it.' >> "$GITHUB_STEP_SUMMARY"
