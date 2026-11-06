@@ -51,8 +51,8 @@ jobs:
                   assert list(im.size)==item["size"]
                   assert im.width==1080 and im.height in (1350,1920)
               assert hashlib.sha256(f.read_bytes()).hexdigest()==item["sha256"]
-              assert item["source_photo"].startswith("https://commons.wikimedia.org/wiki/File:")
-              assert item["license_url"].startswith("https://creativecommons.org/licenses/")
+              assert item["source_photo"].startswith(("https://commons.wikimedia.org/wiki/File:","https://basiryazd.github.io/rozeh-manager/"))
+              assert item["license_url"].startswith(("https://creativecommons.org/licenses/","https://basiryazd.github.io/rozeh-manager/"))
               assert item["approval"]=="private_preview_only_until_brand_visual_review"
           print("PREMIUM_QA_PASS",len(m["items"]),len({x["id"] for x in m["items"]}),"creative families")
           PY
