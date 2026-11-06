@@ -1,0 +1,74 @@
+name: Basir premium photo editorial media V2
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'basir-social/render_premium_v2.py'
+      - '.github/workflows/basir-premium-media-v2.yml'
+permissions:
+  contents: write
+concurrency:
+  group: basir-premium-media-v2
+  cancel-in-progress: false
+jobs:
+  professional-creatives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Font and high-resolution image processing
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install -y fonts-dejavu-core
+          python -m pip install 'Pillow>=11,<13'
+      - name: Generate premium photo-led campaign only from verified licensed architectural photos
+        run: python basir-social/render_premium_v2.py
+      - name: Validate 6 distinct assets and exact rights references
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          import json,hashlib
+          from pathlib import Path
+          root=Path("basir-social/site/assets/premium")
+          m=json.loads((root/"manifest.json").read_text("utf8"))
+          assert m["publication"]=="PREVIEW_NOT_PUBLISHED"
+          assert len(m["items"])==6
+          assert len({x["id"] for x in m["items"]})==3
+          assert (root/"LICENSES.md").exists()
+          for item in m["items"]:
+              f=root/item["file"]
+              assert f.is_file()
+              with Image.open(f) as im:
+                  assert im.format=="JPEG"
+                  assert list(im.size)==item["size"]
+                  assert im.width==1080 and im.height in (1350,1920)
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==item["sha256"]
+              assert item["source_photo"].startswith("https://commons.wikimedia.org/wiki/File:")
+              assert item["license_url"].startswith("https://creativecommons.org/licenses/")
+              assert item["approval"]=="private_preview_only_until_brand_visual_review"
+          print("PREMIUM_QA_PASS",len(m["items"]),len({x["id"] for x in m["items"]}),"creative families")
+          PY
+      - name: Publish static review gallery and image URLs (not social publication)
+        run: |
+          git config user.name "basiryazd-creative-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add basir-social/site/assets/premium/
+          if git diff --cached --quiet; then
+            echo "No creative changes."
+          else
+            git commit -m "Prepare 6 premium photo campaign previews and credits [skip ci]"
+            git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
+          fi
+      - name: Safety and delivery boundary
+        if: always()
+        run: |
+          echo 'Preview assets only. No Meta/Buffer/Metricool post API was called; social publication requires separately verified eligibility.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Original source authors and CC license details are in assets/premium/LICENSES.md. Real Eitaa reportage remains independent.' >> "$GITHUB_STEP_SUMMARY"
