@@ -1,63 +1,41 @@
-name: Basir daily educational story images
+name: Basir legacy social visuals — manual PRIVATE archive only
 
+# Legacy geometric template has been rejected by the owner. It may be regenerated
+# solely for offline quality comparisons, never auto published or pushed to the
+# public asset directory. All new designs require a separate verified pipeline.
 on:
   workflow_dispatch:
-  schedule:
-    # GitHub Actions times are UTC; 16:45 UTC = 20:15 Asia/Tehran.
-    - cron: "45 16 * * *"
-  push:
-    branches: [main]
-    paths:
-      - "basir-social/**"
-      - ".github/workflows/basir-social-media.yml"
-  pull_request:
-    paths:
-      - "basir-social/**"
-      - ".github/workflows/basir-social-media.yml"
 
 permissions:
-  contents: write
-
-concurrency:
-  group: basir-social-media
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  generate-public-assets:
+  private-legacy-reference:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install graphic tools
+      - name: Install renderer
         run: python -m pip install "Pillow==11.3.0"
-      - name: Generate and validate 14 daily Stories and 14 feed visuals
+      - name: Produce historical comparison assets only
         run: |
-          python basir-social/generate_media.py --days 14
+          python basir-social/generate_media.py --days 2
           python - <<'PY'
-          import json
           from pathlib import Path
-          data=json.loads(Path("basir-social/public_media/manifest.json").read_text("utf-8"))
-          assert len(data["items"])==28
-          assert all(Path("basir-social/public_media",x["file"]).is_file() for x in data["items"])
-          assert sum(x["kind"]=="STORY" for x in data["items"])==14
-          assert sum(x["kind"]=="POST" for x in data["items"])==14
-          assert all(x["handle"]=="@basiryazd" for x in data["items"])
-          print("Validated:",len(data["items"]),"public branded story images")
+          p=Path("basir-social/public_media/manifest.json")
+          assert p.exists()
+          print("LEGACY_PRIVATE_PREVIEW_ONLY: no publishing, no public push.")
           PY
-      - name: Save generated images on the public main branch
-        if: github.event_name != 'pull_request'
-        run: |
-          git config user.name "basiryazd-design-bot"
-          git config user.email "basiryazd-design-bot@users.noreply.github.com"
-          git add basir-social/public_media/
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh Basir Yazd 14-day branded feed/story assets [skip ci]"
-            git push origin HEAD:main
-          else
-            echo "No daily media changes"
-          fi
+      - name: Attach brief-lived review artifacts, not public website assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: old-design-rejected-private-reference
+          path: |
+            basir-social/public_media/manifest.json
+            basir-social/public_media/story-*.jpg
+            basir-social/public_media/feed-*.jpg
+          retention-days: 2
+          if-no-files-found: error
