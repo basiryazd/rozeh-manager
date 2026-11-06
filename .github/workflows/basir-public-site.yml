@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "basiryazd-public-newsroom"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add basir-social/site/content.json basir-social/site/reports.html basir-social/site/news.html basir-social/site/activities-yazd.html basir-social/site/volunteer-guide.html basir-social/site/sitemap.xml basir-social/site/feed.xml
+          git add basir-social/site/index.html basir-social/site/content.json basir-social/site/reports.html basir-social/site/news.html basir-social/site/activities-yazd.html basir-social/site/volunteer-guide.html basir-social/site/sitemap.xml basir-social/site/feed.xml
           if ! git diff --cached --quiet; then
             git commit -m "Update Basir public newsroom with attributed sources [skip ci]"
             git push origin HEAD:main || (git pull --rebase origin main && git push origin HEAD:main)
