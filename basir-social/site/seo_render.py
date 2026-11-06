@@ -141,7 +141,7 @@ def news_section(items):
         cards.append(f"""<article class="card">
 <span class="stamp">{esc(stamp)}</span><h2>{esc(title)}</h2>
 <p class="note">تاریخ منبع: {esc(date_text or "در خبرگزاری اصلی")} | برای جزئیات و اصلاحات به منبع مراجعه کنید.</p>
-<a class="btn" href="{esc(url)}" target="_blank" rel="noopener noreferrer sponsored">مطالعه در خبرگزاری {esc(source)}</a>
+<a class="btn" href="{esc(url)}" target="_blank" rel="noopener noreferrer">مطالعه در خبرگزاری {esc(source)}</a>
 </article>""")
     return intro+(''.join(cards) if cards else '<p class="card">فعلاً تیتر منبع‌دار تازه‌ای در این دسته یافت نشده است؛ <a href="https://t.me/basiryazd">خبرخوان تلگرام بصیر</a> را دنبال کنید.</p>')
 
@@ -230,7 +230,7 @@ def render_sitemap(data):
     static=["","reports.html","news.html","activities-yazd.html",
             "volunteer-guide.html","media-kit.html"]
     modified=str(data.get("updated_at") or "2026-11-06")[:10]
-    if not re.fullmatch(r"20\\d{2}-\\d{2}-\\d{2}",modified):
+    if not re.fullmatch(r"20\d{2}-\d{2}-\d{2}",modified):
         modified="2026-11-06"
     urls=Element("urlset",{"xmlns":"http://www.sitemaps.org/schemas/sitemap/0.9"})
     for slug in static:
