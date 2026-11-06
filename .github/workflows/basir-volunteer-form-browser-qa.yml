@@ -1,0 +1,35 @@
+name: Basir volunteer form — failure-safe browser QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'basir-social/site/volunteer.html'
+      - 'basir-social/site/volunteer-thanks.html'
+      - 'basir-social/site/test_volunteer_browser.py'
+      - '.github/workflows/basir-volunteer-form-browser-qa.yml'
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser harness
+        run: python -m pip install 'playwright>=1.54,<2'
+      - name: Serve static Basir pages locally (no personal data)
+        run: |
+          python -m http.server 8765 --directory basir-social/site > /tmp/basir-http.log 2>&1 &
+          sleep 2
+          curl --fail --silent --show-error http://127.0.0.1:8765/volunteer.html > /dev/null
+      - name: Verify 522 timeout fallback and real success UI with mocked provider
+        run: python basir-social/site/test_volunteer_browser.py
+      - name: Report privacy and delivery boundary
+        if: always()
+        run: |
+          echo 'Synthetic test data only; FormSubmit calls were intercepted and no applicant was sent.' >> "$GITHUB_STEP_SUMMARY"
+          echo '522 and success paths are interface checks. Real email delivery requires a confirmed provider response and owner-side mailbox.' >> "$GITHUB_STEP_SUMMARY"
