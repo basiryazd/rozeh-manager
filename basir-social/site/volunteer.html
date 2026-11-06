@@ -64,7 +64,7 @@ footer{text-align:center;color:#77877c;font-size:12px;padding:25px 0;border-top:
 </div>
 <div class="field full" style="margin-top:18px"><label for="note">مهارت یا توضیح تکمیلی <span class="help">(اختیاری)</span></label><textarea name="توضیحات_تکمیلی" id="note" maxlength="500" placeholder="چه مهارتی دارید یا دوست دارید چگونه کمک کنید؟ از ارسال اطلاعات حساس خودداری کنید."></textarea></div>
 <label class="consent"><input type="checkbox" name="رضایت_برای_ارتباط" value="دارم" required><span>با ارسال این فرم، موافقم اطلاعات درج‌شده برای بررسی درخواست همکاری به ایمیل رسمی بصیر یزد ارسال شود و برای هماهنگی احتمالی با من تماس بگیرند. اطلاعات از طریق سرویس FormSubmit منتقل می‌شود و طبق اعلام این سرویس، امکان نگهداری موقت تا ۳۰ روز وجود دارد. اطلاعات عمومی نخواهد شد.</span></label>
-<button type="submit" class="submit">ثبت اعلام آمادگی و ارسال به بصیر یزد ←</button>
+<button type="submit" class="submit" id="submitButton">ارسال اعلام آمادگی به بصیر یزد ←</button><p id="submitStatus" role="status" aria-live="polite" style="display:none;margin:12px 0;padding:13px;border-radius:12px;font-size:13px"></p><a id="emailFallback" style="display:none;border-radius:12px;background:#f1e7d1;border:1px solid #dcc4a0;padding:13px 18px;text-align:center;font-weight:700;margin:12px 0;display:none" href="#" rel="nofollow">ارسال خصوصی از طریق برنامه ایمیل خودم ↗</a>
 <p class="note">برای امنیت شما، در این فرم کد ملی، نشانی منزل، مدارک شناسایی، شماره کارت یا اطلاعات پزشکی درخواست نمی‌شود. ممکن است برای جلوگیری از هرزنامه، تأیید ضدربات نمایش داده شود.</p>
 </form>
 </section>
@@ -73,10 +73,60 @@ footer{text-align:center;color:#77877c;font-size:12px;padding:25px 0;border-top:
 </aside></div>
 </main><footer>بصیر یزد · قرارگاه جهادی حضرت بقیه الله(عج) · خدمت مسئولانه با رعایت حریم خصوصی</footer>
 <script>
-document.getElementById("volunteerForm").addEventListener("submit",function(e){
-const list=[...document.querySelectorAll("#interestOptions input[type=checkbox]")];
-if(!list.some(c=>c.checked)){e.preventDefault();document.getElementById("interestError").style.display="block";list[0].focus();return}
-document.getElementById("interestError").style.display="none";
+(function(){
+const form=document.getElementById("volunteerForm");
+const status=document.getElementById("submitStatus");
+const fallback=document.getElementById("emailFallback");
+const button=document.getElementById("submitButton");
+function show(message,error){
+  status.style.display="block";
+  status.style.background=error?"#fff0ea":"#ecf6ed";
+  status.style.color=error?"#9b3d30":"#265e42";
+  status.textContent=message;
+}
+form.addEventListener("submit",async function(e){
+  e.preventDefault();
+  const checks=[...document.querySelectorAll("#interestOptions input[type=checkbox]")];
+  const err=document.getElementById("interestError");
+  if(!checks.some(x=>x.checked)){
+    err.style.display="block";checks[0].focus();return;
+  }
+  err.style.display="none";
+  if(!form.reportValidity())return;
+  const details=new FormData(form);
+  const name=String(details.get("نام_و_نام_خانوادگی")||"").slice(0,90);
+  const contact=String(details.get("راه_تماس")||"").slice(0,100);
+  const city=String(details.get("شهر_یا_شهرستان")||"").slice(0,75);
+  const interests=details.getAll("زمینه_همکاری[]").map(String);
+  const availability=String(details.get("زمان_همکاری")||"");
+  const note=String(details.get("توضیحات_تکمیلی")||"").slice(0,500);
+  const subject="اعلام آمادگی همکاری داوطلبانه | بصیر یزد";
+  const mailBody=["نام و نام خانوادگی: "+name,"راه ارتباطی: "+contact,
+    "شهر: "+city,"زمینه‌ها: "+interests.join("، "),
+    "زمان همکاری: "+availability,"توضیحات: "+note,
+    "من با ارتباط جهت هماهنگی موافقم."].join("\n");
+  fallback.href="mailto:basiryazd@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(mailBody);
+  fallback.style.display="none";button.disabled=true;
+  show("در حال ارسال درخواست و بررسی پاسخ سرویس…",false);
+  try {
+    const ctrl=new AbortController();
+    const timeout=setTimeout(()=>ctrl.abort(),12000);
+    let response;
+    try {
+      response=await fetch("https://formsubmit.co/ajax/basiryazd@gmail.com",{
+        method:"POST",body:details,headers:{"Accept":"application/json"},signal:ctrl.signal});
+    }finally{clearTimeout(timeout)}
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok||result.success!==true){
+      throw new Error("Submission provider not confirmed");
+    }
+    window.location.href="./volunteer-thanks.html";
+  } catch(_err){
+    show("سامانه ارسال خودکار در حال حاضر پاسخ تأییدشده نداد. اطلاعات شما در سایت ذخیره نشده است. با دکمه زیر می‌توانید همان درخواست را از طریق ایمیل شخصی خود ارسال کنید.",true);
+    fallback.style.display="block";
+    fallback.focus();
+  }finally{button.disabled=false}
 });
+})();
 </script>
 </body></html>
