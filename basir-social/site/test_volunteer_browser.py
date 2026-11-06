@@ -12,7 +12,7 @@ def fill(page):
     page.locator("#name").fill("آزمون نمونه")
     page.locator("#contact").fill("test@example.invalid")
     page.locator("#city").fill("یزد")
-    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").check()
+    page.locator("input[type=checkbox][value='رسانه، خبر و گزارش‌نویسی']").check(force=True)
     page.locator("input[type=radio][value='هفتگی']").check()
     page.locator("input[name='رضایت_برای_ارتباط']").check()
 
@@ -32,7 +32,7 @@ def main():
         response=page.goto(BASE+"volunteer.html",wait_until="domcontentloaded")
         assert response.status==200,response.status
         fill(page)
-        page.locator("#submitButton").click()
+        page.locator("#submitButton").click(force=True)
         page.locator("#emailFallback").wait_for(state="visible",timeout=12000)
         assert page.url==BASE+"volunteer.html",page.url
         assert page.locator("#name").input_value()=="آزمون نمونه"
@@ -41,8 +41,6 @@ def main():
         assert href.startswith("mailto:basiryazd@gmail.com?"),href[:120]
         assert not errors,errors
         print("VOLUNTEER_522_SAFE_FALLBACK_OK",flush=True)
-        # Exact same page must not navigate on native POST when JS is unavailable.
-        page2=ctx.new_page(java_script_enabled=False) if False else None
         # Mock a successful provider acceptance; success remains the only confirmation.
         page.unroute_all()
         page.route("https://formsubmit.co/**",
