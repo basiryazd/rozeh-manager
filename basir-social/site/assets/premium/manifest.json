@@ -83,12 +83,12 @@
         1080,
         1920
       ],
-      "sha256": "ae16b5dc517425fee233e79568aafea9295b0b40206c955591da3dddcfbd0827",
+      "sha256": "ba901ce2be5e55700d3dafb45e9c769670ba90a33a776e141a6554b4fa40c74e",
       "design": "PREMIUM_PHOTO_EDITORIAL_V2",
-      "source_photo": "https://commons.wikimedia.org/wiki/File:Windcatcher.jpg",
-      "author": "Mr.Shafagh",
-      "license": "CC BY-SA 4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_photo": "https://basiryazd.github.io/rozeh-manager/basir-social/site/assets/volunteer-campaign-1080x1350.jpg",
+      "author": "Basir Yazd original conceptual art",
+      "license": "Original in-house conceptual illustration",
+      "license_url": "https://basiryazd.github.io/rozeh-manager/basir-social/site/",
       "approval": "private_preview_only_until_brand_visual_review",
       "reportage": false
     },
@@ -100,12 +100,12 @@
         1080,
         1350
       ],
-      "sha256": "f7986d7c8864ef12dfdd85f7d2756da93607ba0a14a5e382784d739f5e0d7332",
+      "sha256": "b641ac9bdb52f976bc837897d55a4056b762c74f4ea8d263aeedc759665dd243",
       "design": "PREMIUM_PHOTO_EDITORIAL_V2",
-      "source_photo": "https://commons.wikimedia.org/wiki/File:Windcatcher.jpg",
-      "author": "Mr.Shafagh",
-      "license": "CC BY-SA 4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_photo": "https://basiryazd.github.io/rozeh-manager/basir-social/site/assets/volunteer-campaign-1080x1350.jpg",
+      "author": "Basir Yazd original conceptual art",
+      "license": "Original in-house conceptual illustration",
+      "license_url": "https://basiryazd.github.io/rozeh-manager/basir-social/site/",
       "approval": "private_preview_only_until_brand_visual_review",
       "reportage": false
     }
