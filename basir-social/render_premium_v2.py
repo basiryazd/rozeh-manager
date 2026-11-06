@@ -31,9 +31,9 @@ TOPICS=[
      "page":"https://commons.wikimedia.org/wiki/File:Yazd%27s_windcatchers_-_panoramio.jpg",
      "tag":"رسانه قابل اعتماد","title":["خبر مستند،","روایت روشن"],"detail":"گزارش‌های اصلی فعالیت‌های مردمی، همراه با منبع",
      "cta":"گزارش‌های بصیر یزد را دنبال کنید"},
-    {"id":"yazd","image":"Windcatcher.jpg","author":"Mr.Shafagh",
-     "license":"CC BY-SA 4.0","license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
-     "page":"https://commons.wikimedia.org/wiki/File:Windcatcher.jpg",
+    {"id":"yazd","image":"OWNED_CONCEPTUAL_YAZD","author":"Basir Yazd original conceptual art",
+     "license":"Original in-house conceptual illustration","license_url":"https://basiryazd.github.io/rozeh-manager/basir-social/site/",
+     "page":"https://basiryazd.github.io/rozeh-manager/basir-social/site/assets/volunteer-campaign-1080x1350.jpg",
      "tag":"مشارکت اجتماعی","title":["یزد،","شهر همدلی"],"detail":"از علاقه و مهارت خود برای کمک داوطلبانه استفاده کنیم",
      "cta":"در جریان خدمت همراه شوید"},
 ]
@@ -45,6 +45,15 @@ def draw_rtl(draw,word,x,y,size,color,bold=False):
     left=draw.textbbox((0,0),word,font=font,direction="rtl",language="fa")[0]
     draw.text((x,y),word,fill=color,font=font,anchor="ra",direction="rtl",language="fa")
 def photo_file(item):
+    if item["image"]=="OWNED_CONCEPTUAL_YAZD":
+        path=Path("basir-social/site/assets/volunteer-campaign-1080x1350.jpg")
+        if not path.is_file():
+            raise RuntimeError("Owned conceptual reference art unavailable")
+        print("OWNED_CONCEPTUAL_SOURCE",item["id"],str(path),flush=True)
+        # Only the unobstructed lower city illustration; exclude old generated copy.
+        with Image.open(path) as input_image:
+            img=input_image.convert("RGB")
+            return img.crop((0,665,1080,995)).copy()
     name=quote(item["image"],safe="")
     url="https://commons.wikimedia.org/wiki/Special:FilePath/"+name
     req=Request(url,headers={"User-Agent":"BasirYazdOpenMedia/1.0 (website basiryazd.github.io); community editorial asset"})
@@ -114,7 +123,8 @@ def layout(item,original,format):
     draw_rtl(d,item["cta"],1007,foot+139,38,(245,215,161),True)
     draw_rtl(d,"@basiryazd",1007,foot+224,32,(252,251,245),True)
     # Avoid suggesting that this generic architectural image documents a recent charity action.
-    draw_rtl(d,"طرح مفهومی | عکس معماری یزد با مجوز بازنشر",1007,height-60,20,(215,220,203))
+    source_label=("تصویرسازی مفهومی اختصاصی | گزارش میدانی نیست" if item["image"]=="OWNED_CONCEPTUAL_YAZD" else "طرح مفهومی | عکس معماری یزد با مجوز بازنشر")
+    draw_rtl(d,source_label,1007,height-60,20,(215,220,203))
     return out
 results=[]
 for topic in TOPICS:
