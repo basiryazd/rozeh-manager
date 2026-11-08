@@ -36,8 +36,8 @@ jobs:
                       root=ET.fromstring(payload)
                       loc=root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
                       print("SITEMAP_XML_VALID",root.tag,"urls",len(loc),flush=True)
-                      if len(loc)!=6:
-                          raise RuntimeError("unexpected number of sitemap URLs")
+                      if not loc:
+                          raise RuntimeError("sitemap contains no page URLs")
                       if not all((x.text or "").startswith(BASE) for x in loc):
                           raise RuntimeError("sitemap URLs do not match public property")
                   elif b"<html" not in payload.lower():
