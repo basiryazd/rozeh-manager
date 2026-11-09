@@ -2,8 +2,8 @@ name: Basir Yazd public newsroom — automatic verified updates
 on:
   workflow_dispatch:
   schedule:
-    # Best-effort updates six times daily, Asia/Tehran editorial timezone.
-    - cron: '19 1,5,9,13,17,21 * * *'
+    # Best-effort public newsroom refresh every 15 minutes; not a guaranteed SLA.
+    - cron: '7,22,37,52 * * * *'
   push:
     branches: [main]
     paths:
