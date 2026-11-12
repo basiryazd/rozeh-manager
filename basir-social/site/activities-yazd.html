@@ -46,7 +46,36 @@ footer{background:#103025;color:#dce9df;padding:45px 0;font-size:12px}footer .wr
 .note{font-size:12px;color:#64776c}
 @media(max-width:1000px){.nav{align-items:flex-start;flex-direction:column;gap:8px}nav{gap:12px}.hero{padding:55px 0}}
 @media(max-width:680px){.wrap{width:calc(100% - 30px)}.topbar .wrap{font-size:9px}.symbol{height:47px;width:47px;border-radius:15px}.brand strong{font-size:20px}.brand small{font-size:9px;white-space:normal}nav a{font-size:11px}.hero{padding:40px 0 50px}.hero h1{font-size:30px}.main{padding:31px 0 50px}.card{padding:23px 20px;border-radius:19px}.boxlist{grid-template-columns:1fr}footer a{margin-left:12px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}</style></head><body>
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Basir editorial pages: visual hierarchy and continuity with the new homepage */
+:root{--forest:#164932;--gold:#e1b16c;--paper:#fbf8f2;--ink:#173c30;--muted:#65766b;--stroke:#e4e6da}
+body{background:var(--paper)}
+.topbar{background:#0e3528}
+header{box-shadow:0 8px 24px rgba(16,45,32,.045)}
+.brand .symbol{background:linear-gradient(145deg,#286747,#123b2c);color:#ffddb0}
+.hero{padding:90px 0 100px;min-height:300px;background:radial-gradient(circle at 73% -12%,#397251 0,transparent 46%),linear-gradient(120deg,#0c3427,#235a40);border-bottom:7px solid #e2b472}
+.hero:before{content:"";width:325px;height:325px;position:absolute;left:7%;top:36%;border:1px solid #ffffff30;transform:rotate(30deg);border-radius:32px;pointer-events:none}
+.hero .meta{display:inline-flex;align-items:center;padding:5px 12px;border:1px solid #bca97799;border-radius:30px;background:#ffffff0e}
+.hero h1{font-size:clamp(34px,4vw,57px);line-height:1.45;margin:24px 0 17px;max-width:800px}
+.hero p{font-size:16px;max-width:790px}
+.card{border-radius:26px;background:#fffdf9;box-shadow:0 15px 44px #213f2810;padding:36px 40px}
+.card:nth-child(3n + 2){background:#f8f3e7;border-color:#e6dccb}
+.card:nth-child(3n + 3){background:#f0f6eb;border-color:#dce8d8}
+.card h2,.card h3{font-weight:900}
+.card .btn{background:#17523c;border-radius:13px}
+.card .btn:hover{background:#226d4e}
+.stamp{background:#e4eee1;border:1px solid #d4e4ce;padding:6px 13px}
+.notice{background:#f6edd6;border-color:#cca560;color:#5c533a}
+.main{padding:66px 0 80px}
+.next-read{padding:34px;margin-top:42px;border-radius:26px;background:linear-gradient(140deg,#164934,#0d3328);color:#fff}
+.next-read h2{font-size:21px;margin:0 0 5px}.next-read p{font-size:12px;color:#bed6c4;margin:0 0 19px}
+.next-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.next-links a{display:block;padding:16px 18px;border:1px solid #ffffff30;border-radius:15px;color:#fff1d7;background:#ffffff0a;font-weight:800;font-size:12px;transition:background .2s,transform .2s}
+.next-links a:hover{background:#ffffff1d;transform:translateY(-2px);text-decoration:none}
+footer{background:#0d3024}
+@media(max-width:1000px){.hero{padding:69px 0 74px}.hero h1{font-size:38px}.nav{align-items:flex-start}}
+@media(max-width:680px){.hero{padding:49px 0 56px}.hero h1{font-size:31px}.hero p{font-size:13px}.card{padding:24px 21px;border-radius:20px}.next-read{padding:26px 20px}.next-links{grid-template-columns:1fr}.main{padding:42px 0 64px}}</style></head><body>
 <div class="topbar"><div class="wrap"><span>بصیر یزد | رسانه خدمت و نیکوکاری</span><span>از یزد تا سراسر ایران</span></div></div>
 <header><div class="wrap nav"><a href="./" class="brand"><span class="symbol">ب</span><span><strong>بصیر یزد</strong><small>قرارگاه جهادی حضرت بقیه الله(عج)</small></span></a>
 <nav aria-label="فهرست سایت"><a href="./">خانه</a><a href="reports.html">گزارش‌ها</a><a href="news.html">خبرها</a><a href="activities-yazd.html">فعالیت‌های یزد</a><a href="volunteer.html">همکاری داوطلبانه</a></nav></div></header>
@@ -66,7 +95,11 @@ footer{background:#103025;color:#dce9df;padding:45px 0;font-size:12px}footer .wr
 </ul></section>
 <section class="card"><h2>گزارش‌های مستند بصیر یزد و اخبار کار خیر</h2>
 <p>در <a href="reports.html">آرشیو گزارش‌های جهادی بصیر یزد</a> می‌توان متن پیام‌های عمومی و پیوند اصل آنها در ایتا را مشاهده کرد. برای اطلاع از خبرهای مستقل استانی و کشوری نیز <a href="news.html">صفحه اخبار نیکوکاری</a> در دسترس است.</p>
-<p>اگر مدیر یک گروه داوطلبانه هستید و قصد همکاری رسانه‌ای دارید، از <a href="media-kit.html">صفحه معرفی و همکاری بصیر یزد</a> شروع کنید. انتشار گزارش یا بازنشر ویدئو باید با حقوق اشخاص، مجوز انتشار و مستندات مناسب همراه باشد.</p></section></div></main>
+<p>اگر مدیر یک گروه داوطلبانه هستید و قصد همکاری رسانه‌ای دارید، از <a href="media-kit.html">صفحه معرفی و همکاری بصیر یزد</a> شروع کنید. انتشار گزارش یا بازنشر ویدئو باید با حقوق اشخاص، مجوز انتشار و مستندات مناسب همراه باشد.</p></section>
+<section class="next-read" aria-label="مسیرهای دیگر در سایت">
+<h2>داستان خدمت، ادامه دارد</h2><p>برای آشنایی بیشتر با خبرهای مستند، کار داوطلبانه و فرهنگ نیکوکاری، این مسیرها را دنبال کنید.</p>
+<div class="next-links"><a href="reports.html">گزارش‌های جهادی و مردمی ↖</a><a href="news.html">خبرهای نیکوکاری ↖</a><a href="volunteer-guide.html">راهنمای یک کار نیک ↖</a></div></section>
+</div></main>
 <footer><div class="wrap"><strong>بصیر یزد | قرارگاه جهادی حضرت بقیه الله(عج)</strong><p>رسانه خدمت و نیکوکاری با پیوند به منبع اصلی؛ بدون انتشار اطلاعات شخصی مددجویان.</p>
 <a href="https://eitaa.com/basiryazd" target="_blank" rel="noopener noreferrer">ایتا</a><a href="https://t.me/basiryazd" target="_blank" rel="noopener noreferrer">تلگرام</a><a href="https://www.instagram.com/basiryazd/" target="_blank" rel="noopener noreferrer">اینستاگرام</a></div></footer>
 </body></html>
