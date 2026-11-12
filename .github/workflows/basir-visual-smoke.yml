@@ -1,0 +1,44 @@
+name: Basir visual design - external civic photo and live HTML smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/basir-visual-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  verify-live-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Confirm new visual page and licensed Yazd image can be fetched
+        run: |
+          python3 - <<'PY'
+          import urllib.request
+          from html.parser import HTMLParser
+          site="https://basiryazd.github.io/rozeh-manager/basir-social/site/"
+          photo="https://commons.wikimedia.org/wiki/Special:FilePath/Old_City_-_Yazd%2C_Iran.jpg?width=1280"
+          def fetch(url):
+              req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; Basir-Yazd-VisualQA/1.0)"})
+              with urllib.request.urlopen(req,timeout=32) as response:
+                  data=response.read(3_000_000)
+                  return response.status,response.headers.get("Content-Type",""),data,response.url
+          for name,url in (("home",site),("news",site+"news.html"),("image",photo)):
+              try:
+                  status,mime,data,dest=fetch(url)
+                  print("VISUAL_CHECK",name,"status",status,"mime",mime,"bytes",len(data),"destination",dest)
+                  if name=="home":
+                      text=data.decode("utf-8")
+                      assert 'id="mahdi-action"' in text and "art-photo" in text, "New design is not live"
+                  if name=="news":
+                      assert b"<html" in data.lower(), "News HTML unavailable"
+                  if name=="image":
+                      assert mime.startswith("image/"), "Licensed image URL is not an image"
+              except Exception as error:
+                  print("VISUAL_CHECK_FAILURE",name,type(error).__name__,str(error)[:250])
+                  if name=="image":
+                      print("::warning::External Yazd photo failed remotely; accessible fallback SVG remains")
+                  else:
+                      raise
+          PY
