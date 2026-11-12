@@ -121,6 +121,26 @@ class TechnicalSeoTests(unittest.TestCase):
         self.assertEqual(soup.select_one("#reportsList") is not None,True)
         self.assertEqual(soup.select_one("#newsList") is not None,True)
 
+    def test_editorial_redesign_has_accessible_civic_photo_and_real_source_links(self):
+        home=(ROOT/"index.html").read_text(encoding="utf8")
+        soup=BeautifulSoup(home,"html.parser")
+        photo=soup.select_one(".hero-art img.art-photo")
+        self.assertIsNotNone(photo)
+        self.assertIn("commons.wikimedia.org",photo.get("src",""))
+        self.assertIn("CC0",soup.select_one(".art-label").get_text())
+        self.assertIn("نه گزارش فعالیت",photo.get("alt",""))
+        hope=soup.select_one("#mahdi-action")
+        self.assertIsNotNone(hope)
+        self.assertIn("یک کار نیک",hope.get_text())
+        self.assertEqual(len(hope.select(".hope-step")),3)
+        self.assertTrue(all(card.get("href","").endswith(".html")
+                            for card in hope.select(".hope-step")))
+        self.assertEqual(len(soup.select(".feed-grid")),2)
+        self.assertIn("prefers-reduced-motion",home)
+        self.assertIn("@media(max-width:560px)",home)
+        self.assertTrue(soup.select_one("a.skip[href='#main']"))
+        self.assertIsNotNone(soup.find("meta",attrs={"name":"google-site-verification"}))
+
     def test_homepage_curates_only_service_related_sourced_reports(self):
         self.assertEqual(seo_render._homepage_card(
             {"message_id":"55","url":"https://eitaa.com/basiryazd/55",
