@@ -128,7 +128,7 @@ class TechnicalSeoTests(unittest.TestCase):
         self.assertIsNotNone(photo)
         self.assertIn("commons.wikimedia.org",photo.get("src",""))
         self.assertIn("CC0",soup.select_one(".art-label").get_text())
-        self.assertIn("نه گزارش فعالیت",photo.get("alt",""))
+        self.assertIn("نه تصویر فعالیت",photo.get("alt",""))
         hope=soup.select_one("#mahdi-action")
         self.assertIsNotNone(hope)
         self.assertIn("یک کار نیک",hope.get_text())
