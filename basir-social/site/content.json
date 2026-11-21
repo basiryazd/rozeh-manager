@@ -1,7 +1,7 @@
 {
   "source": "verified public @basiryazd and attributed RSS titles",
   "timezone": "Asia/Tehran",
-  "updated_at": "2026-11-20T20:46:53.159351+00:00",
+  "updated_at": "2026-11-21T08:51:17.157504+00:00",
   "reports": [
     {
       "message_id": "3482",
@@ -30,10 +30,17 @@
   ],
   "news": [
     {
-      "title": "700 برنامه بسیج در مناطق عشایری فارس؛ از محرومیت‌زدایی تا جهاد تبیین",
-      "url": "https://www.tasnimnews.ir/fa/news/1405/08/28/3752546/700-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%A8%D8%B3%DB%8C%D8%AC-%D8%AF%D8%B1-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D8%B9%D8%B4%D8%A7%DB%8C%D8%B1%DB%8C-%D9%81%D8%A7%D8%B1%D8%B3-%D8%A7%D8%B2-%D9%85%D8%AD%D8%B1%D9%88%D9%85%DB%8C%D8%AA-%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C-%D8%AA%D8%A7-%D8%AC%D9%87%D8%A7%D8%AF-%D8%AA%D8%A8%DB%8C%DB%8C%D9%86",
+      "title": "۷۰۰ میلیارد تومان طرح‌ محرومیت زدایی بسیج سازندگی یزد افتتاح شد",
+      "url": "https://www.isna.ir/news/1405083020708/%DB%B7%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF-%D8%AA%D9%88%D9%85%D8%A7%D9%86-%D8%B7%D8%B1%D8%AD-%D9%85%D8%AD%D8%B1%D9%88%D9%85%DB%8C%D8%AA-%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C-%D8%A8%D8%B3%DB%8C%D8%AC-%D8%B3%D8%A7%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%DB%8C%D8%B2%D8%AF-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD",
+      "source": "خبرگزاری ایسنا",
+      "published": "2026-11-21T08:48:33+00:00",
+      "local": true
+    },
+    {
+      "title": "بسیج سازندگی مازندران؛ پیشرو در خدمت به مردم",
+      "url": "https://www.tasnimnews.ir/fa/news/1405/08/30/3753985/%D8%A8%D8%B3%DB%8C%D8%AC-%D8%B3%D8%A7%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%85%D8%A7%D8%B2%D9%86%D8%AF%D8%B1%D8%A7%D9%86-%D9%BE%DB%8C%D8%B4%D8%B1%D9%88-%D8%AF%D8%B1-%D8%AE%D8%AF%D9%85%D8%AA-%D8%A8%D9%87-%D9%85%D8%B1%D8%AF%D9%85",
       "source": "خبرگزاری تسنیم",
-      "published": "2026-11-19T07:35:59+00:00",
+      "published": "2026-11-21T07:57:29+00:00",
       "local": false
     }
   ]
